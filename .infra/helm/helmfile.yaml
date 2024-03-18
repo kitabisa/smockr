@@ -1,0 +1,29 @@
+repositories:
+  - name: kitabisa
+    url: {{ requiredEnv "CHARTS_REPOSITORY" }}
+    oci: true
+
+releases:
+  - name: {{ requiredEnv "APP_NAME" }}-server-{{ requiredEnv "ENV_NAME" }}
+    namespace: {{ requiredEnv "APP_NAME" }}
+    labels:
+      tier: app
+      type: main
+    chart: kitabisa/app
+    version: ~1.0.0-alpha
+    values:
+      - {{ requiredEnv "ENV" }}/server.yaml
+      - values.yaml.gotmpl
+    hooks:
+      - events: ["postsync"]
+        showlogs: true
+        command: kubectl
+        args: ["label", "--overwrite", "namespaces", "{{ requiredEnv "APP_NAME" }}", "goldilocks.fairwinds.com/enabled=true"]
+
+  - name: {{ requiredEnv "APP_NAME" }}-debugger
+    namespace: {{ requiredEnv "APP_NAME" }}
+    labels:
+      tier: debugger
+      type: optional
+    chart: kitabisa/debugger
+    installed: false

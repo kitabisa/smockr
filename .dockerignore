@@ -1,0 +1,16 @@
+.infra
+.dockerignore
+.DS_Store
+.editorconfig
+.env*
+.git
+.gitignore
+.gitmodules
+.idea
+.vscode
+*.log
+coverage
+Dockerfile
+Makefile
+README.md
+service-account.example.json

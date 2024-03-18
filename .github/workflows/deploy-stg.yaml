@@ -1,0 +1,47 @@
+name: Deploy Stg
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  ENV: stg
+  ENV_NAME: stg
+
+concurrency:
+  group: deploy-stg-smocker
+  cancel-in-progress: true
+
+jobs:
+  build-push:
+    runs-on: ktbs-build-deploy-runner
+    steps:
+      - name: Run build & push
+        uses: kitabisa/composite-actions/frontend/build@v2
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID_STG }}
+          credentials_json: ${{ secrets.GCP_SA_KEY_STG }}
+          artifact_registry_host: ${{ secrets.ARTIFACT_REGISTRY_HOST }}
+          artifact_registry_project_id: ${{ secrets.GCP_PROJECT_ID_INFRA }}
+          setup_pnpm: true
+          using_nextjs: true
+          config: false
+
+  deploy:
+    runs-on: ktbs-build-deploy-runner
+    needs: build-push
+    steps:
+      - name: Run deploy & prune
+        uses: kitabisa/composite-actions/frontend/deploy@v2
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID_STG }}
+          credentials_json: ${{ secrets.GCP_SA_KEY_STG }}
+          artifact_registry_host: ${{ secrets.ARTIFACT_REGISTRY_HOST }}
+          artifact_registry_project_id: ${{ secrets.GCP_PROJECT_ID_INFRA }}
+          gke_cluster_name: ${{ secrets.GKE_CLUSTER_STGDEV }}
+          gke_cluster_zone: ${{ secrets.GKE_ZONE_STGDEV }}
+          rancher_host: ${{ secrets.RANCHER_CATTLE_HOST }}
+          rancher_access_key: ${{ secrets.RANCHER_CATTLE_ACCESS_KEY }}
+          rancher_secret_key: ${{ secrets.RANCHER_CATTLE_SECRET_KEY }}
+          rancher_cluster_id: ${{ secrets.RANCHER_CATTLE_CLUSTER_ID_STGDEV }}

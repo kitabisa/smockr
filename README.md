@@ -46,7 +46,7 @@ Example:
 
 ```
 async function getUsers() {
-  const response = await fetch("https://smocker.kitabisa.xyz/users", {
+  const response = await fetch("https://geni.kitabisa.xyz/smocker/users", {
     method: "GET",
     headers: {
       "X-Smocker-Body": JSON.stringify({

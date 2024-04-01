@@ -10,15 +10,10 @@ releases:
       tier: app
       type: main
     chart: kitabisa/app
-    version: ~1.0.0-alpha
+    version: ~1.1.0-rc
     values:
       - {{ requiredEnv "ENV" }}/server.yaml
       - values.yaml.gotmpl
-    hooks:
-      - events: ["postsync"]
-        showlogs: true
-        command: kubectl
-        args: ["label", "--overwrite", "namespaces", "{{ requiredEnv "APP_NAME" }}", "goldilocks.fairwinds.com/enabled=true"]
 
   - name: {{ requiredEnv "APP_NAME" }}-debugger
     namespace: {{ requiredEnv "APP_NAME" }}

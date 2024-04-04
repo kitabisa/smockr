@@ -43,6 +43,7 @@ package:
 	docker buildx build \
 		--build-arg VERSION=${VERSION} \
 		--build-arg GIT_COMMIT=${GIT_COMMIT}${GIT_DIRTY} \
+		--build-arg SMOCKER_SECRET_KEY=${SMOCKER_SECRET_KEY} \
 		--cache-from type=local,src=/tmp/.buildx-cache \
 		--cache-to type=local,dest=/tmp/.buildx-cache \
 		--tag ${DOCKER_REPOSITORY}/${APP_NAME}:${GIT_COMMIT} \

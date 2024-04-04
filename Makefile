@@ -34,7 +34,7 @@ build:
 	CI_ENV=${ENV} \
 	NODE_ENV=production \
 	VERSION=${VERSION} \
-	bun build
+	bun run build
 
 .PHONY: package
 package:

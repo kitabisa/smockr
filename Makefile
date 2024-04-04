@@ -34,6 +34,7 @@ build:
 	CI_ENV=${ENV} \
 	NODE_ENV=production \
 	VERSION=${VERSION} \
+	SMOCKER_SECRET_KEY=${SMOCKER_SECRET_KEY} \
 	bun run build
 
 .PHONY: package

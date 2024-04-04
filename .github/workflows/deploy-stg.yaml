@@ -17,14 +17,24 @@ jobs:
   build-push:
     runs-on: ktbs-build-deploy-runner
     steps:
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
       - name: Run build & push
         uses: kitabisa/composite-actions/frontend/build@v2
+        env:
+          CORS_ALLOWED_HEADERS: '*'
+          CORS_ALLOWED_METHOD: 'GET, POST, PATCH, PUT, DELETE, OPTIONS'
+          CORS_ALLOWED_ORIGIN: '*'
+          SMOCKER_SECRET_KEY: ${{ secrets.SMOCKER_SECRET_KEY }}
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID_STG }}
           credentials_json: ${{ secrets.GCP_SA_KEY_STG }}
           artifact_registry_host: ${{ secrets.ARTIFACT_REGISTRY_HOST }}
           artifact_registry_project_id: ${{ secrets.GCP_PROJECT_ID_INFRA }}
-          setup_pnpm: true
+          # setup_bun: true
           using_nextjs: true
           config: false
 

@@ -10,18 +10,15 @@ const nextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "*",
-            // value: process.env.ALLOWED_ORIGIN,
+            value: process.env.CORS_ALLOWED_ORIGIN,
           },
           {
             key: "Access-Control-Allow-Methods",
-            value: "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-            // value: process.env.ALLOWED_METHOD,
+            value: process.env.CORS_ALLOWED_METHOD,
           },
           {
             key: "Access-Control-Allow-Headers",
-            value: "*",
-            // value: process.env.ALLOWED_HEADERS,
+            value: process.env.CORS_ALLOWED_HEADERS,
           },
         ],
       },

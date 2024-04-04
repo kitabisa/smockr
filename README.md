@@ -1,7 +1,15 @@
-<h1 align="center">Smocker</h1>
+<p align="center">
+  <a href="https://kitabisa.com" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset=".github/assets/logo-light.svg">
+      <img alt="Smocker" src=".github/assets/logo-light.svg" width="350" height="70" style="max-width: 100%;">
+    </picture>
+  </a>
+</p>
 
 <p align="center">
-  Supple mock server with <a href="https://github.com/faker-js/faker">Faker.js</a>
+  Supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
 </p>
 
 <p align="center">
@@ -12,18 +20,22 @@
 
 ## Features
 
+ * Using [Bun](https://github.com/oven-sh/bun)
+ * Using [Next.js](https://github.com/vercel/next.js)
  * Written in [Typescript](https://github.com/microsoft/TypeScript)
- * Using [Next.js](https://github.com/vercel/next.js) (with catch all api route)
  * Get random fake data using [Faker.js](https://github.com/faker-js/faker)
  * Flexible on-demand response api (can modify body, status, headers, and delayed response)
 
 ## Getting Started
 
-Setup Node.js:
+Setup Bum (Bun Version Manager):
+Bum is supported on Linux x86_64 and Darwin x86_64 (Mac OS)
+You can enter `uname -ms` command in your terminal to see yours
 
 ```
-$ brew install nvm
-$ nvm install
+$ curl -fsSL https://github.com/owenizedd/bum/raw/main/install.sh | bash
+$ source ~/.zshrc
+$ bum use
 ```
 
 ## Quick Start
@@ -31,13 +43,19 @@ $ nvm install
 Install dependencies:
 
 ```
-$ pnpm i
+$ bun install
+```
+
+Setup environment:
+
+```
+$ cp .env.example .env (and modify your env)
 ```
 
 Run in local:
 
 ```
-$ pnpm dev
+$ bun dev
 ```
 
 ## How to use?
@@ -49,6 +67,7 @@ async function getUsers() {
   const response = await fetch("https://geni.kitabisa.xyz/smocker/users", {
     method: "GET",
     headers: {
+      "X-Smocker-Secret": process.env.SMOCKER_SECRET_KEY,
       "X-Smocker-Body": JSON.stringify({
         api_code: 101000,
         data: [

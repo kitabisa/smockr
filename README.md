@@ -28,9 +28,9 @@
 
 ## Getting Started
 
-Setup Bum (Bun Version Manager):
-Bum is supported on Linux x86_64 and Darwin x86_64 (Mac OS)
-You can enter `uname -ms` command in your terminal to see yours
+Setup Bum (Bun Version Manager):<br/>
+Bum is supported on Linux x86_64 and Darwin x86_64 (Mac OS),<br/>
+You can enter `uname -ms` command in your terminal to see yours.
 
 ```
 $ curl -fsSL https://github.com/owenizedd/bum/raw/main/install.sh | bash
@@ -40,16 +40,16 @@ $ bum use
 
 ## Quick Start
 
-Install dependencies:
-
-```
-$ bun install
-```
-
 Setup environment:
 
 ```
 $ cp .env.example .env (and modify your env)
+```
+
+Install dependencies:
+
+```
+$ bun install
 ```
 
 Run in local:

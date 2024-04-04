@@ -40,10 +40,10 @@ $ bum use
 
 ## Quick Start
 
-Setup environment:
+Setup environment (and modify your env):
 
 ```
-$ cp .env.example .env (and modify your env)
+$ cp .env.example .env
 ```
 
 Install dependencies:

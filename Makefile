@@ -25,7 +25,7 @@ help:
 .PHONY: install
 install:
 	@echo "Installing dependencies for ${APP_NAME} ${VERSION}"
-	CI=true pnpm install --frozen-lockfile
+	CI=true bun install --frozen-lockfile
 
 .PHONY: build
 build:
@@ -34,7 +34,7 @@ build:
 	CI_ENV=${ENV} \
 	NODE_ENV=production \
 	VERSION=${VERSION} \
-	pnpm build
+	bun build
 
 .PHONY: package
 package:

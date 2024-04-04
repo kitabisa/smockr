@@ -1,4 +1,4 @@
-FROM node:lts-slim
+FROM oven/bun:1
 
 ARG GIT_COMMIT
 ARG VERSION
@@ -21,4 +21,4 @@ RUN adduser --disabled-password --gecos '' smocker
 
 USER smocker
 
-CMD ["node", "server.js"]
+CMD ["bun", "server.js"]

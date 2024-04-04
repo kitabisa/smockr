@@ -26,8 +26,8 @@ async function smocker(request: NextRequest) {
   const requestHeaders = new Headers(request.headers)
 
   if (requestHeaders.get('X-Smocker-Secret') !== process.env.SMOCKER_SECRET_KEY) {
-    return Response.json({
-      message: 'your secret key is missing or not allowed'
+    return Response.json({ message: 'your secret key is missing or not allowed' }, {
+      status: 403,
     })
   }
 

@@ -24,7 +24,8 @@
  * Using [Next.js](https://github.com/vercel/next.js)
  * Written in [Typescript](https://github.com/microsoft/TypeScript)
  * Get random fake data using [Faker.js](https://github.com/faker-js/faker)
- * Flexible on-demand response api (can modify body, status, headers, and delayed response)
+ * Flexible on-demand response (can modify body, status, headers, and delayed response)
+ * No data storage needed
 
 ## Getting Started
 
@@ -56,6 +57,12 @@ Run in local:
 
 ```
 $ bun dev
+```
+
+Run in prod:
+
+```
+$ bun run build && bun .next/standalone/server.js
 ```
 
 ## How to use?

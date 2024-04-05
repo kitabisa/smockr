@@ -70,49 +70,59 @@ $ bun run build && bun .next/standalone/server.js
 Example:
 
 ```
+function serialize(obj) {
+  let str = [];
+  for (let p in obj) {
+    if (obj.hasOwnProperty(p)) {
+      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+    }
+  }
+  return str.join("&");
+}
+
 async function getUsers() {
-  const response = await fetch("https://geni.kitabisa.xyz/smocker/users", {
+  const queryParams = serialize({
+    smocker: {
+      response: {
+        body: {
+          api_code: 101000,
+          data: [
+            ...(() => {
+              let items = [];
+              for (let i = 0; i < 10; i++) {
+                items.push({
+                  id: 1,
+                  username: "{{internet.userName}}",
+                  email: "{{internet.email}}",
+                  avatar: "{{image.avatar}}",
+                  birthdate: "{{date.birthdate}}",
+                });
+              }
+              return items;
+            })()
+          ],
+          meta: {
+            version: "v1.84.0",
+            api_status: "unstable",
+            api_env: "prod"
+          },
+        },
+        headers: {
+          "Content-Type": "application/json"
+        },
+        status: 200,
+        delay: 3000,
+      },
+    },
+  });
+
+  const response = await fetch(`https://geni.kitabisa.xyz/smocker/users?${queryParams}`, {
     method: "GET",
     headers: {
       "X-Smocker-Secret": process.env.SMOCKER_SECRET_KEY,
-      "X-Smocker-Body": JSON.stringify({
-        api_code: 101000,
-        data: [
-          {
-            id: 1,
-            username: "{{internet.userName}}",
-            email: "{{internet.email}}",
-            avatar: "{{image.avatar}}",
-            birthdate: "{{date.birthdate}}",
-          },
-          {
-            id: 2,
-            username: "{{internet.userName}}",
-            email: "{{internet.email}}",
-            avatar: "{{image.avatar}}",
-            birthdate: "{{date.birthdate}}",
-          },
-          {
-            id: 3,
-            username: "{{internet.userName}}",
-            email: "{{internet.email}}",
-            avatar: "{{image.avatar}}",
-            birthdate: "{{date.birthdate}}",
-          }
-        ],
-        meta: {
-          version: "v1.84.0",
-          api_status: "unstable",
-          api_env: "prod"
-        },
-      }),
-      "X-Smocker-Status": 200,
-      "X-Smocker-Header": JSON.stringify({
-        "Content-Type": "application/json"
-      }),
-      "X-Smocker-Delay": 3000,
     },
   });
+  
   const users = await response.json();
   console.log(users);
 }

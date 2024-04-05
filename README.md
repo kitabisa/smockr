@@ -65,9 +65,75 @@ Run in prod:
 $ bun run build && bun .next/standalone/server.js
 ```
 
-## How to use?
+## Usage
 
-Example hit from client app:
+### Secret Key
+
+Specify a secret key in request header.
+
+```http
+TO DO
+```
+
+### Response Body
+
+Specify a search body param to retrieve a response with that body.
+
+```http
+GET https://geni.kitabisa.xyz/smocker?smocker[response][body]=hola
+
+
+HTTP/1.1 200 OK
+content-type: text/plain
+content-length: 4
+
+hola
+```
+
+### Response Status
+
+Specify a search status param get back that code status. The status must be
+inside the range 200 to 599.
+
+```http
+GET https://geni.kitabisa.xyz/smocker?smocker[response][status]=301
+
+
+HTTP/1.1 301 Moved Permanently
+content-type: text/plain
+content-length: 0
+```
+
+### Response Headers
+
+Specify a search header param as json string to get them back.
+
+```http
+GET https://geni.kitabisa.xyz/smocker?smocker[response][headers]={"x-hello":"world"}
+
+
+HTTP/1.1 200 OK
+x-hello: world
+content-length: 0
+```
+
+### Response Delay
+
+Specify a search delay param in milliseconds in order to delay the response.
+
+```http
+GET https://geni.kitabisa.xyz/smocker?smocker[response][delay]=1000
+```
+
+### Request Schema Validation
+
+Specify a search schema validation in json schema (stringify) to set request body validations.
+
+```http
+TO DO
+```
+
+## Example Code
 
 ```
 async function getUsers() {

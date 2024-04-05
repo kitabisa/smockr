@@ -70,18 +70,8 @@ $ bun run build && bun .next/standalone/server.js
 Example:
 
 ```
-function serialize(obj) {
-  let str = [];
-  for (let p in obj) {
-    if (obj.hasOwnProperty(p)) {
-      str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-    }
-  }
-  return str.join("&");
-}
-
 async function getUsers() {
-  const queryParams = serialize({
+  const queryParams = new URLSearchParams({
     smocker: {
       response: {
         body: {
@@ -114,7 +104,7 @@ async function getUsers() {
         delay: 3000,
       },
     },
-  });
+  }).toString();
 
   const response = await fetch(`https://geni.kitabisa.xyz/smocker/users?${queryParams}`, {
     method: "GET",

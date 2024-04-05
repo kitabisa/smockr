@@ -1,7 +1,7 @@
-import { type NextRequest } from 'next/server'
 import { parseSchema } from '@/utils/parsers/parseSchema'
-import { setTimeout } from 'timers/promises'
 import { faker } from '@faker-js/faker'
+import { type NextRequest } from 'next/server'
+import { setTimeout } from 'timers/promises'
 
 async function smockerHandler(request: NextRequest) {
   const requestHeaders = new Headers(request.headers)
@@ -50,14 +50,16 @@ async function smockerHandler(request: NextRequest) {
   }
 
   const body = searchParams.get('smocker[response][body]')
-    ? faker.helpers.fake(`${searchParams.get('smocker[response][body]')}`)
+    ? faker.helpers.fake(searchParams.get('smocker[response][body]') || '')
     : undefined
   const status = searchParams.get('smocker[response][status]')
     ? Number(searchParams.get('smocker[response][status]'))
     : 200
   const headers = {
     'Content-Type': 'application/json',
-    ...JSON.parse(`${searchParams.get('smocker[response][headers]')}`),
+    ...(searchParams.get('smocker[response][headers]') &&
+      JSON.parse(searchParams.get('smocker[response][headers]') || '')
+    ),
   }
   const delay = searchParams.get('smocker[response][delay]')
     ? Number(searchParams.get('smocker[response][delay]'))

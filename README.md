@@ -67,15 +67,7 @@ $ bun run build && bun .next/standalone/server.js
 
 ## Usage
 
-### Secret Key
-
-Specify a secret key in request header.
-
-```http
-TO DO
-```
-
-### Response Body
+### Body
 
 Specify a search body param to retrieve a response with that body.
 
@@ -90,7 +82,7 @@ content-length: 4
 hola
 ```
 
-### Response Status
+### Status
 
 Specify a search status param get back that code status. The status must be
 inside the range 200 to 599.
@@ -104,7 +96,7 @@ content-type: text/plain
 content-length: 0
 ```
 
-### Response Headers
+### Headers
 
 Specify a search header param as json string to get them back.
 
@@ -117,7 +109,7 @@ x-hello: world
 content-length: 0
 ```
 
-### Response Delay
+### Delay
 
 Specify a search delay param in milliseconds in order to delay the response.
 
@@ -125,12 +117,12 @@ Specify a search delay param in milliseconds in order to delay the response.
 GET https://geni.kitabisa.xyz/smocker?smocker[response][delay]=1000
 ```
 
-### Request Schema Validation
+### Schema Validations
 
 Specify a search schema validation in json schema (stringify) to set request body validations.
 
 ```http
-TO DO
+GET https://geni.kitabisa.xyz/smocker?smocker[request][body][schema]=JSON.stringify(jsonSchema)
 ```
 
 ## Example Code

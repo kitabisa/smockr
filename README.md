@@ -67,7 +67,7 @@ $ bun run build && bun .next/standalone/server.js
 
 ## How to use?
 
-Example:
+Example hit from client app:
 
 ```
 async function getUsers() {
@@ -109,7 +109,7 @@ async function getUsers() {
   const response = await fetch(`https://geni.kitabisa.xyz/smocker/users?${queryParams}`, {
     method: "GET",
     headers: {
-      "X-Smocker-Secret": process.env.SMOCKER_SECRET_KEY,
+      "X-Smocker-Secret": `${process.env.SMOCKER_SECRET_KEY}`,
     },
   });
   

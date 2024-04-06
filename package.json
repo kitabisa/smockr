@@ -1,6 +1,6 @@
 {
   "name": "@kitabisa/smocker",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "preinstall": "bunx only-allow bun",
@@ -9,7 +9,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "bin": {
+    "serve": "./cli/index.js"
+  },
   "dependencies": {
+    "@opaline/core": "^0.5.5"
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",

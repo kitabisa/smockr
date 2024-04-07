@@ -3,21 +3,23 @@ import { faker } from '@faker-js/faker'
 import { type NextRequest } from 'next/server'
 import { setTimeout } from 'timers/promises'
 
-async function smockerHandler(request: NextRequest) {
-  const requestHeaders = new Headers(request.headers)
-  const { searchParams } = new URL(request.url)
+const SECRET_KEY = `${process.env.SECRET_KEY}`
 
-  if (requestHeaders.get('X-Smocker-Secret') !== process.env.SMOCKER_SECRET_KEY) {
+async function smockrHandler(req: NextRequest) {
+  const reqHeaders = new Headers(req.headers)
+  const { searchParams } = new URL(req.url)
+
+  if (SECRET_KEY && reqHeaders.get('X-Smockr-Secret') !== SECRET_KEY) {
     return Response.json({ message: 'your secret key is missing or not allowed' }, {
       status: 403,
     })
   }
 
-  if (searchParams.get('smocker[request][body][schema]')) {
+  if (searchParams.get('mock[request][body][schema]')) {
     let reqBody
 
     try {
-      reqBody = await request.json()
+      reqBody = await req.json()
     } catch(error) {
       return Response.json({
         response_code: "00001",
@@ -30,7 +32,7 @@ async function smockerHandler(request: NextRequest) {
       })
     }
 
-    const reqBodySchema = searchParams.get('smocker[request][body][schema]') || ''
+    const reqBodySchema = searchParams.get('mock[request][body][schema]') || ''
     const jsonSchema = JSON.parse(reqBodySchema)
     const zodSchema = parseSchema(jsonSchema)
     const validation = zodSchema.safeParse(reqBody)
@@ -49,20 +51,20 @@ async function smockerHandler(request: NextRequest) {
     }
   }
 
-  const body = searchParams.get('smocker[response][body]')
-    ? faker.helpers.fake(searchParams.get('smocker[response][body]') || '')
+  const body = searchParams.get('mock[response][body]')
+    ? faker.helpers.fake(searchParams.get('mock[response][body]') || '')
     : undefined
-  const status = searchParams.get('smocker[response][status]')
-    ? Number(searchParams.get('smocker[response][status]'))
+  const status = searchParams.get('mock[response][status]')
+    ? Number(searchParams.get('mock[response][status]'))
     : 200
   const headers = {
     'Content-Type': 'application/json',
-    ...(searchParams.get('smocker[response][headers]') &&
-      JSON.parse(searchParams.get('smocker[response][headers]') || '')
+    ...(searchParams.get('mock[response][headers]') &&
+      JSON.parse(searchParams.get('mock[response][headers]') || '')
     ),
   }
-  const delay = searchParams.get('smocker[response][delay]')
-    ? Number(searchParams.get('smocker[response][delay]'))
+  const delay = searchParams.get('mock[response][delay]')
+    ? Number(searchParams.get('mock[response][delay]'))
     : 0
 
   if (delay) {
@@ -76,5 +78,5 @@ async function smockerHandler(request: NextRequest) {
 }
 
 export {
-  smockerHandler
+  smockrHandler
 }

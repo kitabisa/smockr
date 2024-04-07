@@ -1,19 +1,24 @@
 {
-  "name": "@kitabisa/smocker",
+  "name": "@kitabisa/smockr",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "preinstall": "bunx only-allow bun",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cli:build": "cd commands && opaline build",
+    "cli:dev": "cd commands && opaline dev"
   },
   "bin": {
-    "serve": "./cli/index.js"
+    "smockr": "dist/cli.js"
   },
+  "files": [
+    "dist/*",
+    ".next/standalone/*"
+  ],
   "dependencies": {
-    "@opaline/core": "^0.5.5"
+    "@opaline/core": "^0.5.5",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",

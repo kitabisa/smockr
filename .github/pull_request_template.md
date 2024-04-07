@@ -2,7 +2,7 @@
 _Place what this pull request changes and anything affected. If your PR block or require another PR, also need to mention here_
 
 ## Why are we doing this? Any context or related work?
-_You may put your JIRA card link or another here_
+_You may put your link or another here_
 
 ## Where should a reviewer start?
 _optional -- if your changes affected so much files, it is encouraged to give helper for reviewer_

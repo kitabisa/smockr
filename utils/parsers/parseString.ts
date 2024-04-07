@@ -1,4 +1,4 @@
-import { withRecursive } from "../utils";
+import { withRecursive } from "./utils";
 import type { JSONSchema7 } from "json-schema";
 import { z } from "zod";
 

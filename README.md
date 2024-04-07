@@ -3,7 +3,7 @@
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset=".github/assets/logo-light.svg">
-      <img alt="Smocker" src=".github/assets/logo-light.svg" width="350" height="70" style="max-width: 100%;">
+      <img alt="Smockr" src=".github/assets/logo-light.svg" width="350" height="70" style="max-width: 100%;">
     </picture>
   </a>
 </p>
@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/kitabisa/smocker/actions/workflows/deploy-stg.yaml"><img src="https://github.com/kitabisa/smocker/actions/workflows/deploy-stg.yaml/badge.svg" alt="Deploy Stg" /></a>
+  <a href="https://github.com/kitabisa/smockr/actions/workflows/release-please.yaml"><img src="https://github.com/kitabisa/smockr/actions/workflows/release-please.yaml/badge.svg" alt="Release Please" /></a>
 </p>
 
 ------
@@ -72,7 +72,7 @@ $ bun run build && bun .next/standalone/server.js
 Specify a search body param to retrieve a response with that body.
 
 ```http
-GET https://geni.kitabisa.xyz/smocker?smocker[response][body]=hola
+GET http://localhost:3000?mock[response][body]=hola
 
 
 HTTP/1.1 200 OK
@@ -88,7 +88,7 @@ Specify a search status param get back that code status. The status must be
 inside the range 200 to 599.
 
 ```http
-GET https://geni.kitabisa.xyz/smocker?smocker[response][status]=301
+GET http://localhost:3000?mock[response][status]=301
 
 
 HTTP/1.1 301 Moved Permanently
@@ -101,7 +101,7 @@ content-length: 0
 Specify a search header param as json string to get them back.
 
 ```http
-GET https://geni.kitabisa.xyz/smocker?smocker[response][headers]={"x-hello":"world"}
+GET http://localhost:3000?mock[response][headers]={"x-hello":"world"}
 
 
 HTTP/1.1 200 OK
@@ -114,7 +114,7 @@ content-length: 0
 Specify a search delay param in milliseconds in order to delay the response.
 
 ```http
-GET https://geni.kitabisa.xyz/smocker?smocker[response][delay]=1000
+GET http://localhost:3000?mock[response][delay]=1000
 ```
 
 ### Schema Validations
@@ -122,7 +122,7 @@ GET https://geni.kitabisa.xyz/smocker?smocker[response][delay]=1000
 Specify a search schema validation in json schema (stringify) to set request body validations.
 
 ```http
-GET https://geni.kitabisa.xyz/smocker?smocker[request][body][schema]=JSON.stringify(jsonSchema)
+GET http://localhost:3000?mock[request][body][schema]=JSON.stringify(jsonSchema)
 ```
 
 ## Example Code
@@ -130,7 +130,7 @@ GET https://geni.kitabisa.xyz/smocker?smocker[request][body][schema]=JSON.string
 ```
 async function getUsers() {
   const queryParams = new URLSearchParams({
-    smocker: {
+    smockr: {
       response: {
         body: {
           api_code: 101000,
@@ -164,10 +164,10 @@ async function getUsers() {
     },
   }).toString();
 
-  const response = await fetch(`https://geni.kitabisa.xyz/smocker/users?${queryParams}`, {
+  const response = await fetch(`http://localhost:3000/users?${queryParams}`, {
     method: "GET",
     headers: {
-      "X-Smocker-Secret": `${process.env.SMOCKER_SECRET_KEY}`,
+      "X-Smockr-Secret": `${process.env.SMOCKER_SECRET_KEY}`,
     },
   });
   

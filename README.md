@@ -3,7 +3,7 @@
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset=".github/assets/logo-light.svg">
-      <img alt="Smockr" src=".github/assets/logo-light.svg" width="350" height="70" style="max-width: 100%;">
+      <img alt="smockr" src=".github/assets/logo-light.svg" width="350" height="70" style="max-width: 100%;">
     </picture>
   </a>
 </p>

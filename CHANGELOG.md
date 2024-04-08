@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/kitabisa/smockr/compare/v1.0.1...v1.0.2) (2024-04-08)
+
+
+### Bug Fixes
+
+* take out private field from package.json ([5bd4f8d](https://github.com/kitabisa/smockr/commit/5bd4f8d49ba9eca335e68c54d2cc82435611ac8e))
+
 ## [1.0.1](https://github.com/kitabisa/smockr/compare/v1.0.0...v1.0.1) (2024-04-08)
 
 

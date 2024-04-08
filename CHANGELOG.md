@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.7](https://github.com/kitabisa/smockr/compare/v1.1.6...v1.1.7) (2024-04-08)
+
+
+### Bug Fixes
+
+* update readme ([b1720a7](https://github.com/kitabisa/smockr/commit/b1720a76132f9bb114af283cf652bb587bd9500f))
+
 ## [1.1.6](https://github.com/kitabisa/smockr/compare/v1.1.5...v1.1.6) (2024-04-08)
 
 

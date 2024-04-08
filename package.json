@@ -31,6 +31,17 @@
   "bugs": {
     "url": "https://github.com/kitabisa/smockr/issues"
   },
+  "keywords": [
+    "api",
+    "mock",
+    "mocking",
+    "cli",
+    "tools",
+    "server",
+    "service",
+    "front-end",
+    "back-end"
+  ],
   "dependencies": {
     "@opaline/core": "^0.5.5",
     "next": "14.1.4",

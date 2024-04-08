@@ -8,10 +8,6 @@
   Supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/kitabisa/smockr/actions/workflows/release-please.yaml"><img src="https://github.com/kitabisa/smockr/actions/workflows/release-please.yaml/badge.svg" alt="Release Please" /></a>
-</p>
-
 ------
 
 ## Features

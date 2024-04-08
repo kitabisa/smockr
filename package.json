@@ -1,7 +1,7 @@
 {
   "name": "smockr",
   "description": "CLI tools for serve supple mock server with random fake data using Faker.js",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

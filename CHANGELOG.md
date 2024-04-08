@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/kitabisa/smockr/compare/v1.1.3...v1.1.4) (2024-04-08)
+
+
+### Bug Fixes
+
+* npm publish ([19176d5](https://github.com/kitabisa/smockr/commit/19176d56bee9b2a8ed87e9e8c624ee418b701893))
+
 ## [1.1.3](https://github.com/kitabisa/smockr/compare/v1.1.2...v1.1.3) (2024-04-08)
 
 

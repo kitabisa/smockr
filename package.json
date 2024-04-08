@@ -1,5 +1,5 @@
 {
-  "name": "@kitabisa/smockr",
+  "name": "smockr",
   "description": "CLI tools for serve supple mock server with random fake data using Faker.js",
   "version": "1.1.2",
   "scripts": {
@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "cli:build": "cd commands && opaline build",
-    "cli:dev": "cd commands && opaline dev"
+    "cli:dev": "cd commands && opaline dev",
+    "prepublish": "next build && cd commands && opaline build"
   },
   "bin": {
     "smockr": "dist/cli.js"
@@ -17,6 +18,16 @@
     "dist/*",
     ".next/standalone/*"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kitabisa/smockr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kitabisa/smockr/issues"
+  },
   "dependencies": {
     "@opaline/core": "^0.5.5",
     "next": "14.1.4",

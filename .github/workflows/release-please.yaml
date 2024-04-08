@@ -26,7 +26,6 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@kitabisa'
         if: ${{ steps.release.outputs.release_created }}
 
       - run: bun install --frozen-lockfile

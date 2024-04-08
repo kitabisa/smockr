@@ -9,7 +9,8 @@
     "lint": "next lint",
     "cli:build": "cd commands && opaline build",
     "cli:dev": "cd commands && opaline dev",
-    "prepublish": "next build && cd commands && opaline build"
+    "pkg:build": "bun run build && bun run cli:build",
+    "pkg:publish": "npm publish"
   },
   "bin": {
     "smockr": "dist/cli.js"

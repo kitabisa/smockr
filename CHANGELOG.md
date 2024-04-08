@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/kitabisa/smockr/compare/v1.0.0...v1.1.0) (2024-04-08)
+
+
+### Features
+
+* smockr initial commit ([dd9944f](https://github.com/kitabisa/smockr/commit/dd9944f1f7dc38b0a77fb1137aca47ef383c8da4))
+
 ## 1.0.0 (2024-04-08)
 
 

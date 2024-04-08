@@ -20,15 +20,15 @@ Setup smockr
 $ npm install --global smockr
 ```
 
-## Usage
+## Quick Start
 
-Running with default params
+Running mock with default params
 
 ```
 $ smockr
 ```
 
-Running with custom params
+Running mock with custom params
 
 ```
 $ smockr \
@@ -49,4 +49,64 @@ See a installed version
 
 ```
 $ smockr --version
+```
+
+## Usage
+
+### Body
+
+Specify a search body param to retrieve a response with that body.
+
+```http
+GET http://localhost:3000/?mock\[response\]\[body\]={"ping":"pong"}
+
+
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: 15
+
+{"ping":"pong"}
+```
+
+### Status
+
+Specify a search status param get back that code status. The status must be
+inside the range 200 to 599.
+
+```http
+GET http://localhost:3000/?mock\[response\]\[status\]=301
+
+
+HTTP/1.1 301 Moved Permanently
+content-type: application/json
+content-length: 0
+```
+
+### Headers
+
+Specify a search header param as json string to get them back.
+
+```http
+GET http://localhost:3000/?mock\[response\]\[headers\]={"x-hello":"world"}
+
+
+HTTP/1.1 200 OK
+x-hello: world
+content-length: 0
+```
+
+### Delay
+
+Specify a search delay param in milliseconds in order to delay the response.
+
+```http
+GET http://localhost:3000/?mock\[response\]\[delay\]=3000
+```
+
+### Schema Validations
+
+Specify a search schema validation in json schema (stringify) to set request body validations.
+
+```http
+GET http://localhost:3000/?mock\[request\]\[body\]\[schema\]=${{ stringify json schema }}
 ```

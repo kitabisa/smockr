@@ -99,7 +99,7 @@ content-length: 0
 Specify a search delay param in milliseconds in order to delay the response.
 
 ```http
-GET http://localhost:3000/?mock\[response\]\[delay\]=1000
+GET http://localhost:3000/?mock\[response\]\[delay\]=3000
 ```
 
 ### Schema Validations

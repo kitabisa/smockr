@@ -1,7 +1,7 @@
 {
   "name": "@kitabisa/smockr",
   "description": "CLI tools for serve supple mock server with random fake data using Faker.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

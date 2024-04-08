@@ -1,14 +1,6 @@
-<p align="center">
-  <a href="https://www.npmjs.com/package/smockr" target="_blank">
-    <h1>smockr</h1>
-  </a>
-</p>
+# smockr
 
-<p align="center">
-  Supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
-</p>
-
-------
+Supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
 
 ## Features
 

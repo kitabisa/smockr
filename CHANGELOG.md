@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/kitabisa/smockr/compare/v1.1.0...v1.1.1) (2024-04-08)
+
+
+### Bug Fixes
+
+* ci update release-please.yaml ([b0f3fb0](https://github.com/kitabisa/smockr/commit/b0f3fb02c7b204aebfe34701334ce99e0d46306a))
+
 ## [1.1.0](https://github.com/kitabisa/smockr/compare/v1.0.3...v1.1.0) (2024-04-08)
 
 

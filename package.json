@@ -1,0 +1,64 @@
+{
+  "name": "smockr",
+  "version": "1.1.7",
+  "description": "CLI tools for serve supple mock server with random fake data using Faker.js",
+  "license": "ISC",
+  "author": "Kitabisa Engineer <engineer@kitabisa.com>",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "cli:build": "cd commands && opaline build",
+    "cli:dev": "cd commands && opaline dev",
+    "pkg:build": "bun run build && bun run cli:build",
+    "pkg:publish": "npm publish"
+  },
+  "bin": {
+    "smockr": "dist/cli.js"
+  },
+  "files": [
+    "dist/*",
+    ".next/standalone/*"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitabisa/smockr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kitabisa/smockr/issues"
+  },
+  "keywords": [
+    "api",
+    "mock",
+    "mocking",
+    "cli",
+    "tools",
+    "server",
+    "service",
+    "front-end",
+    "back-end"
+  ],
+  "dependencies": {
+    "@opaline/core": "^0.5.5",
+    "next": "14.1.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/bun": "latest",
+    "@types/json-schema": "^7.0.11",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.4",
+    "json-schema": "^0.4.0",
+    "typescript": "^5"
+  }
+}

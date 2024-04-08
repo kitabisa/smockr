@@ -1,7 +1,9 @@
 {
   "name": "smockr",
-  "description": "CLI tools for serve supple mock server with random fake data using Faker.js",
   "version": "1.1.5",
+  "description": "CLI tools for serve supple mock server with random fake data using Faker.js",
+  "license": "ISC",
+  "author": "Kitabisa Engineer <engineer@kitabisa.com>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -24,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kitabisa/smockr.git"
+    "url": "git+https://github.com/kitabisa/smockr.git"
   },
   "bugs": {
     "url": "https://github.com/kitabisa/smockr/issues"

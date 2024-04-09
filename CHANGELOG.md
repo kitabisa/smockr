@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/kitabisa/smockr/compare/v1.2.0...v1.2.1) (2024-04-09)
+
+
+### Bug Fixes
+
+* build output for express server ([459e4a4](https://github.com/kitabisa/smockr/commit/459e4a481bd5e8382e23d52c6bb519282c3b79ff))
+
 ## [1.2.0](https://github.com/kitabisa/smockr/compare/v1.1.1...v1.2.0) (2024-04-09)
 
 

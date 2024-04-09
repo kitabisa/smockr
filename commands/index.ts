@@ -1,5 +1,5 @@
 import { execSync } from 'child_process'
-import path from 'path'
+// import path from 'path'
 
 /**
  * Smockr is CLI Tools for serve supple mock server
@@ -10,7 +10,7 @@ import path from 'path'
  * @param {number}   [port=3000] define port
  * @param {string}   [secret=""] define secret
  * @param {string}   [allowOrigin="*"] define allow cors origin
- * @param {string}   [allowMethods="GET,POST,PATCH,PUT,DELETE"] define allow cors methods
+ * @param {string}   [allowMethods="GET,HEAD,PUT,PATCH,POST,DELETE"] define allow cors methods
  * @param {string}   [allowHeaders="*"] define allow cors headers
  */
 export default async function main(
@@ -20,14 +20,12 @@ export default async function main(
   allowMethods?: string,
   allowHeaders?: string,
 ) {
-  const server = path.resolve(__dirname, '../../.next/standalone/server.js')
-  
   execSync(`
     PORT=${port} \
     SECRET_KEY=${secret} \
     ALLOWED_ORIGIN=${allowOrigin} \
     ALLOWED_METHODS=${allowMethods} \
     ALLOWED_HEADERS=${allowHeaders} \
-    node ${server}
+    bun run start
   `, { stdio: 'inherit' })
 }

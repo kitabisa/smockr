@@ -1,4 +1,4 @@
-name: Release Please
+name: Publish
 
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - name: Creating release PR
+      - name: Release Please
         uses: google-github-actions/release-please-action@v4
         id: release
         with:
@@ -37,11 +37,11 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Build package
-        run: bun pkg:build
+        run: bun run build
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Publish package
-        run: bun pkg:publish
+        run: bun run publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}

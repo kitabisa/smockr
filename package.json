@@ -9,7 +9,7 @@
     "prebuild": "bun build ./server.ts --outdir ./out --target bun --format esm",
     "build": "cd commands && opaline build",
     "start": "bun out/server.js",
-    "publish": "npm publish"
+    "publish": "npm cache clean --force && npm publish"
   },
   "bin": {
     "smockr": "dist/cli.js"

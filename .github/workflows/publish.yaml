@@ -9,7 +9,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - name: Release Please
+      - name: Release please
         uses: google-github-actions/release-please-action@v4
         id: release
         with:

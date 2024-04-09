@@ -5,9 +5,9 @@ import { execSync } from 'child_process'
  * Smockr is CLI Tools for serve supple mock server
  * with random fake data using faker.js
  *
- * @usage {cliName} --port 3000 --secret "yoursecret"
+ * @usage {cliName} --port 8080 --secret "yoursecret"
  *
- * @param {number}   [port=3000] define port
+ * @param {number}   [port=8080] define port
  * @param {string}   [secret=""] define secret
  * @param {string}   [allowOrigin="*"] define allow cors origin
  * @param {string}   [allowMethods="GET,HEAD,PUT,PATCH,POST,DELETE"] define allow cors methods

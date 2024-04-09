@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/kitabisa/smockr/compare/v2.0.0...v2.0.1) (2024-04-09)
+
+
+### Bug Fixes
+
+* publish command ([9cc5b66](https://github.com/kitabisa/smockr/commit/9cc5b66bfd0d04058fe7b3304ff98a7d8f601007))
+
 ## [2.0.0](https://github.com/kitabisa/smockr/compare/v1.2.5...v2.0.0) (2024-04-09)
 
 

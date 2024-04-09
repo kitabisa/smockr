@@ -6,7 +6,7 @@
   "author": "Kitabisa Engineer <engineer@kitabisa.com>",
   "scripts": {
     "dev": "cd commands && opaline dev",
-    "prebuild": "NODE_ENV=production bun build ./server.ts --outdir ./out --target bun --format esm",
+    "prebuild": "bun build ./server.ts --outdir ./out --target bun --format esm",
     "build": "cd commands && opaline build",
     "start": "bun out/server.js",
     "publish": "npm publish"

@@ -6,15 +6,17 @@
   "author": "Kitabisa Engineer <engineer@kitabisa.com>",
   "scripts": {
     "dev": "cd commands && opaline dev",
+    "prebuild": "bun build ./server.ts --outdir ./out --target bun --format esm",
     "build": "cd commands && opaline build",
-    "start": "bun server.ts",
+    "start": "bun ./out/index.js",
     "publish": "npm publish"
   },
   "bin": {
     "smockr": "dist/cli.js"
   },
   "files": [
-    "dist/*"
+    "dist/*",
+    "out/*"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

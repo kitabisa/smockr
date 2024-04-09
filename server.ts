@@ -2,7 +2,7 @@ import { parseSchema } from '@/utils/parsers/parseSchema'
 import { faker } from '@faker-js/faker'
 import cors from 'cors'
 import express, { Request, Response } from 'express'
-import pjson from './package.json'
+import pkg from './package.json'
 
 const app = express()
 const port = process.env.PORT || 8080
@@ -76,7 +76,7 @@ app.all("*", (req: Request, res: Response) => {
 })
 
 app.listen(port, () => {
-  console.log(`   \x1b[33m▲ smockr ${pjson.version}\x1b[0m`)
+  console.log(`   \x1b[33m▲ ${pkg.name} ${pkg.version}\x1b[0m`)
   console.log(`   - Network:      http://localhost:${port}`)
   console.log(`   - Local:        http://0.0.0.0:${port}`)
 })

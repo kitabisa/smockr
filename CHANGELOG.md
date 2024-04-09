@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/kitabisa/smockr/compare/v1.2.5...v2.0.0) (2024-04-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate to express js
+
+### Features
+
+* migrate to express js ([026565b](https://github.com/kitabisa/smockr/commit/026565bad2711fa2dd870f170f68d0596acb2a40))
+
 ## [1.2.5](https://github.com/kitabisa/smockr/compare/v1.2.4...v1.2.5) (2024-04-09)
 
 

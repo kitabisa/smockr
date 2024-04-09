@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.4](https://github.com/kitabisa/smockr/compare/v1.2.3...v1.2.4) (2024-04-09)
+
+
+### Bug Fixes
+
+* set default allowed haeders ([8cbda08](https://github.com/kitabisa/smockr/commit/8cbda0861c6efc6e99d2f6ecc55ffb83413ca886))
+* update .env.example ([0566eb8](https://github.com/kitabisa/smockr/commit/0566eb80c8d3d0853bb9db2ba814d22aa45d5355))
+* update field license ([6a318a4](https://github.com/kitabisa/smockr/commit/6a318a4c6c9247cef00f6ed163417c655fbc7102))
+
 ## [1.2.3](https://github.com/kitabisa/smockr/compare/v1.2.2...v1.2.3) (2024-04-09)
 
 

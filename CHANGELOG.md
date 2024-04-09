@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/kitabisa/smockr/compare/v2.0.2...v2.1.0) (2024-04-09)
+
+
+### Features
+
+* set smockr secret as default allowed headers ([ff155d5](https://github.com/kitabisa/smockr/commit/ff155d56ad0a84a741db09f4e364113e50c91b36))
+
 ## [2.0.2](https://github.com/kitabisa/smockr/compare/v2.0.1...v2.0.2) (2024-04-09)
 
 

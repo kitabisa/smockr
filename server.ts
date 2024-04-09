@@ -10,7 +10,7 @@ const port = process.env.PORT || 8080
 const corsOptions = cors({
   origin: process.env.ALLOWED_ORIGIN,
   methods: process.env.ALLOWED_METHODS,
-  allowedHeaders: process.env.ALLOWED_HEADERS,
+  allowedHeaders: process.env.ALLOWED_HEADERS || '*',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 })
 

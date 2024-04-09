@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/kitabisa/smockr/compare/v1.2.1...v1.2.2) (2024-04-09)
+
+
+### Bug Fixes
+
+* update package.json ([619e77c](https://github.com/kitabisa/smockr/commit/619e77cb6c348f20151ac1840643826f7a8c49d8))
+
 ## [1.2.1](https://github.com/kitabisa/smockr/compare/v1.2.0...v1.2.1) (2024-04-09)
 
 

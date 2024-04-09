@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/kitabisa/smockr/compare/v1.1.1...v1.2.0) (2024-04-09)
+
+
+### Features
+
+* migrate api route from nextjs to express ([a23f72b](https://github.com/kitabisa/smockr/commit/a23f72bc296637a168087ba31206376e7c84f8a5))
+
 ## [1.1.1](https://github.com/kitabisa/smockr/compare/v1.1.0...v1.1.1) (2024-04-08)
 
 

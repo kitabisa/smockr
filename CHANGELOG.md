@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.5](https://github.com/kitabisa/smockr/compare/v1.2.4...v1.2.5) (2024-04-09)
+
+
+### Bug Fixes
+
+* set node env on build bun command ([1078314](https://github.com/kitabisa/smockr/commit/1078314125b8bb865710dc454d4b6d0c8041be6a))
+
 ## [1.2.4](https://github.com/kitabisa/smockr/compare/v1.2.3...v1.2.4) (2024-04-09)
 
 

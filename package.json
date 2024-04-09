@@ -2,7 +2,7 @@
   "name": "smockr",
   "version": "1.2.3",
   "description": "CLI tools for serve supple mock server with random fake data using Faker.js",
-  "license": "ISC",
+  "license": "MIT",
   "author": "Kitabisa Engineer <engineer@kitabisa.com>",
   "scripts": {
     "dev": "cd commands && opaline dev",

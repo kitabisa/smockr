@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.1.1](https://github.com/kitabisa/smockr/compare/v2.1.0...v2.1.1) (2024-04-09)
+
+
+### Bug Fixes
+
+* delete .npmrc ([2d9bf87](https://github.com/kitabisa/smockr/commit/2d9bf8798368efdd4cd41cb687297c5afcb7c71f))
+* update package.json ([9ea76b1](https://github.com/kitabisa/smockr/commit/9ea76b1819ae657876126613c597c0c1416c4aef))
+
 ## [2.1.0](https://github.com/kitabisa/smockr/compare/v2.0.2...v2.1.0) (2024-04-09)
 
 

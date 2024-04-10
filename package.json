@@ -8,8 +8,7 @@
     "dev": "cd commands && opaline dev",
     "prebuild": "bun build ./server.ts --outdir ./out --target bun --format esm --splitting --minify",
     "build": "cd commands && opaline build",
-    "start": "bun out/server.js",
-    "publish": "npm publish"
+    "start": "bun out/server.js"
   },
   "bin": {
     "smockr": "dist/cli.js"

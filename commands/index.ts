@@ -1,8 +1,7 @@
 import { execSync } from 'child_process'
-// import path from 'path'
 
 /**
- * Smockr is CLI Tools for serve supple mock server
+ * ktbs-smocker is CLI tools for serve supple mock server
  * with random fake data using faker.js
  *
  * @usage {cliName} --port 8080 --secret "yoursecret"

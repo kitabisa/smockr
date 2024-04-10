@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/kitabisa/smockr/compare/v2.1.3...v2.2.0) (2024-04-10)
+
+
+### Features
+
+* npm publish with org ([#42](https://github.com/kitabisa/smockr/issues/42)) ([2405e8d](https://github.com/kitabisa/smockr/commit/2405e8d13dcec6d69406d971df5ef3839c870187))
+
 ## [2.1.3](https://github.com/kitabisa/smockr/compare/v2.1.2...v2.1.3) (2024-04-10)
 
 

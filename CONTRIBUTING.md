@@ -1,4 +1,4 @@
-# smockr
+# smocker
 
 CLI tools for serve supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
 
@@ -146,7 +146,7 @@ async function getUsers() {
   const response = await fetch(`http://localhost:8080/users?${queryParams}`, {
     method: "GET",
     headers: {
-      "X-Smockr-Secret": `${process.env.SMOCKER_SECRET_KEY}`,
+      "X-Smocker-Secret": `${process.env.SMOCKER_SECRET_KEY}`,
     },
   });
   

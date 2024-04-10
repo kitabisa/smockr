@@ -23,7 +23,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@kitabisa'
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Setup bun
@@ -41,7 +42,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Publish package
-        run: npm publish
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}

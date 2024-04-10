@@ -1,4 +1,4 @@
-# smockr
+# smocker
 
 CLI tools for serve supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
 
@@ -14,10 +14,10 @@ CLI tools for serve supple mock server with random fake data using <a href="http
 
 ## Getting Started
 
-Setup smockr
+Setup smocker
 
 ```
-$ npm install --global smockr
+$ npm install --global @kitabisa/smocker
 ```
 
 ## Quick Start
@@ -25,13 +25,13 @@ $ npm install --global smockr
 Running mock with default params
 
 ```
-$ smockr
+$ ktbs-smocker
 ```
 
 Running mock with custom params
 
 ```
-$ smockr \
+$ ktbs-smocker \
 --port 3000 \
 --secret "mysecret" \
 --allowOrigin "*.kitabisa.com,*.kitajaga.id" \
@@ -42,13 +42,13 @@ $ smockr \
 See a list of all available options
 
 ```
-$ smockr --help
+$ ktbs-smocker --help
 ```
 
 See a installed version
 
 ```
-$ smockr --version
+$ ktbs-smocker --version
 ```
 
 ## Usage

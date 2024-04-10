@@ -22,10 +22,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kitabisa/smockr.git"
+    "url": "git+https://github.com/kitabisa/smocker.git"
   },
   "bugs": {
-    "url": "https://github.com/kitabisa/smockr/issues"
+    "url": "https://github.com/kitabisa/smocker/issues"
   },
   "keywords": [
     "api",

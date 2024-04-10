@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.2.2](https://github.com/kitabisa/smocker/compare/v2.2.1...v2.2.2) (2024-04-10)
+
+
+### Bug Fixes
+
+* Update package.json ([13e88b3](https://github.com/kitabisa/smocker/commit/13e88b393e309c6f692c07beb72d441e3a0d310b))
+* Update package.json ([01e35b3](https://github.com/kitabisa/smocker/commit/01e35b30556e559ff637423ee545b9646dd7772b))
+
 ## [2.2.1](https://github.com/kitabisa/smocker/compare/v2.2.0...v2.2.1) (2024-04-10)
 
 

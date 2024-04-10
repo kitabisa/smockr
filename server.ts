@@ -11,7 +11,7 @@ const corsOptions = cors({
   origin: process.env.ALLOWED_ORIGIN,
   methods: process.env.ALLOWED_METHODS,
   allowedHeaders: process.env.ALLOWED_HEADERS
-    ? `X-Smockr-Secret,${process.env.ALLOWED_HEADERS}`
+    ? `X-Smocker-Secret,${process.env.ALLOWED_HEADERS}`
     : '*',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 })
@@ -22,7 +22,7 @@ app.use(express.json())
 
 app.all("*", (req: Request, res: Response) => {
   const appSecretKey = process.env.SECRET_KEY || ''
-  const secretKey = req.headers['X-Smockr-Secret'] || ''
+  const secretKey = req.headers['X-Smocker-Secret'] || ''
   const bodySchema = req.query['mock[request][body][schema]']
     ? JSON.parse(req.query['mock[request][body][schema]'].toString())
     : undefined

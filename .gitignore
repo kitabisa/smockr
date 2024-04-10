@@ -9,9 +9,9 @@
 # testing
 /coverage
 
-# build
+# output
+/bin/
 /dist/
-/out/
 
 # misc
 .DS_Store

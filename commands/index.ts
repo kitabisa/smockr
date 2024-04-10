@@ -1,4 +1,5 @@
 import { execSync } from 'child_process'
+import path from 'path'
 
 /**
  * ktbs-smocker is CLI tools for serve supple mock server
@@ -19,12 +20,13 @@ export default async function main(
   allowMethods?: string,
   allowHeaders?: string,
 ) {
+  const server = path.resolve(__dirname, '../../bin/server.js')
   execSync(`
     PORT=${port} \
     SECRET_KEY=${secret} \
     ALLOWED_ORIGIN=${allowOrigin} \
     ALLOWED_METHODS=${allowMethods} \
     ALLOWED_HEADERS=${allowHeaders} \
-    bun run start
+    bun ${server}
   `, { stdio: 'inherit' })
 }

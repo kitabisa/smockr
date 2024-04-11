@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.6](https://github.com/kitabisa/smockr/compare/v2.2.5...v2.2.6) (2024-04-11)
+
+
+### Bug Fixes
+
+* prepare script ([ec08dc2](https://github.com/kitabisa/smockr/commit/ec08dc29712168ac3446ba7657d75d37c8836578))
+
 ## [2.2.5](https://github.com/kitabisa/smockr/compare/v2.2.4...v2.2.5) (2024-04-11)
 
 

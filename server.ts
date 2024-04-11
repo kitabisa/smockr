@@ -20,11 +20,14 @@ app.use(corsOptions)
 
 app.use(express.json())
 
+app.all('/favicon.ico', (_req, res) => res.status(204))
+
 app.all("*", (req: Request, res: Response) => {
+  const mock: any = req.query.mock
   const appSecretKey = process.env.SECRET_KEY || ''
   const secretKey = req.headers['X-Smocker-Secret'] || ''
-  const bodySchema = req.query['mock[request][body][schema]']
-    ? JSON.parse(req.query['mock[request][body][schema]'].toString())
+  const bodySchema = mock?.request?.body?.schema
+    ? JSON.parse(mock.request.body.schema.toString())
     : undefined
 
   if (appSecretKey) {
@@ -53,21 +56,21 @@ app.all("*", (req: Request, res: Response) => {
       return
     }
   }
-
-  const body = req.query['mock[response][body]']
-    ? faker.helpers.fake(req.query['mock[response][body]'].toString())
+  
+  const body = mock?.response?.body
+    ? faker.helpers.fake(mock.response.body)
     : undefined
   const headers = {
     'Content-Type': 'application/json',
-    ...(req.query['mock[response][headers]'] &&
-      JSON.parse(req.query['mock[response][headers]'].toString())
+    ...(mock?.response?.headers &&
+      JSON.parse(mock.response.headers.toString())
     ),
   }
-  const status = req.query['mock[response][status]']
-    ? Number(req.query['mock[response][status]'])
+  const status = mock?.response?.status
+    ? Number(mock.response.status)
     : 200
-  const delay = req.query['mock[response][delay]']
-    ? Number(req.query['mock[response][delay]'])
+  const delay = mock?.response?.delay
+    ? Number(mock.response.delay)
     : 0
 
   setTimeout((() => {

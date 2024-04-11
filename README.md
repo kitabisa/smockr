@@ -1,4 +1,4 @@
-# smocker
+# smockr
 
 CLI tools for serve supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
 
@@ -14,10 +14,10 @@ CLI tools for serve supple mock server with random fake data using <a href="http
 
 ## Getting Started
 
-Setup smocker
+Setup smockr
 
 ```
-$ npm install --global @ktbs/smocker
+$ npm install --global @ktbs/smockr
 ```
 
 ## Quick Start
@@ -25,13 +25,13 @@ $ npm install --global @ktbs/smocker
 Running mock with default params
 
 ```
-$ ktbs-smocker
+$ smockr
 ```
 
 Running mock with custom params
 
 ```
-$ ktbs-smocker \
+$ smockr \
 --port 3000 \
 --secret "mysecret" \
 --allowOrigin "*.kitabisa.com,*.kitajaga.id" \
@@ -42,13 +42,13 @@ $ ktbs-smocker \
 See a list of all available options
 
 ```
-$ ktbs-smocker --help
+$ smockr --help
 ```
 
 See a installed version
 
 ```
-$ ktbs-smocker --version
+$ smockr --version
 ```
 
 ## Usage
@@ -58,7 +58,7 @@ $ ktbs-smocker --version
 Specify a search body param to retrieve a response with that body.
 
 ```http
-GET http://localhost:8080/?mock\[response\]\[body\]={"ping":"pong"}
+GET http://localhost:8080/?mock[response][body]={"ping":"pong"}
 
 
 HTTP/1.1 200 OK
@@ -74,7 +74,7 @@ Specify a search status param get back that code status. The status must be
 inside the range 200 to 599.
 
 ```http
-GET http://localhost:8080/?mock\[response\]\[status\]=301
+GET http://localhost:8080/?mock[response][status]=301
 
 
 HTTP/1.1 301 Moved Permanently
@@ -87,7 +87,7 @@ content-length: 0
 Specify a search header param as json string to get them back.
 
 ```http
-GET http://localhost:8080/?mock\[response\]\[headers\]={"x-hello":"world"}
+GET http://localhost:8080/?mock[response][headers]={"x-hello":"world"}
 
 
 HTTP/1.1 200 OK
@@ -100,7 +100,7 @@ content-length: 0
 Specify a search delay param in milliseconds in order to delay the response.
 
 ```http
-GET http://localhost:8080/?mock\[response\]\[delay\]=3000
+GET http://localhost:8080/?mock[response][delay]=3000
 ```
 
 ### Schema Validations
@@ -108,5 +108,5 @@ GET http://localhost:8080/?mock\[response\]\[delay\]=3000
 Specify a search schema validation in json schema (stringify) to set request body validations.
 
 ```http
-GET http://localhost:8080/?mock\[request\]\[body\]\[schema\]=${{ stringify json schema }}
+GET http://localhost:8080/?mock[request][body][schema]=${{ stringify json schema }}
 ```

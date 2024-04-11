@@ -1,5 +1,5 @@
 {
-  "name": "@ktbs/smocker",
+  "name": "@ktbs/smockr",
   "version": "2.2.3",
   "description": "CLI tools for serve supple mock server with random fake data using Faker.js",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "build": "cd commands && opaline build"
   },
   "bin": {
-    "ktbs-smocker": "dist/cli.js"
+    "smockr": "dist/cli.js"
   },
   "files": [
     "bin/*",
@@ -24,10 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kitabisa/smocker.git"
+    "url": "git+https://github.com/kitabisa/smockr.git"
   },
   "bugs": {
-    "url": "https://github.com/kitabisa/smocker/issues"
+    "url": "https://github.com/kitabisa/smockr/issues"
   },
   "keywords": [
     "api",

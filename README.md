@@ -8,7 +8,7 @@ CLI tools for serve supple mock server with random fake data using <a href="http
  * Using [Express.js](https://github.com/expressjs/express) for API routes
  * Written in [Typescript](https://github.com/microsoft/TypeScript)
  * Random fake data using [Faker.js](https://github.com/faker-js/faker)
- * Schema validation using JSON Schema
+ * Schema validation using JSON Schema 7
  * Flexible on-demand response (can modify body, status, headers, and delayed response)
  * No data storage needed
 

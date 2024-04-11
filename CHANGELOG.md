@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.5](https://github.com/kitabisa/smockr/compare/v2.2.4...v2.2.5) (2024-04-11)
+
+
+### Bug Fixes
+
+* Update README.md ([ea72ce4](https://github.com/kitabisa/smockr/commit/ea72ce4fdd74fd51d847ec6a4417534fb5f7d94d))
+
 ## [2.2.4](https://github.com/kitabisa/smockr/compare/v2.2.3...v2.2.4) (2024-04-11)
 
 

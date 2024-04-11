@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.2.4](https://github.com/kitabisa/smockr/compare/v2.2.3...v2.2.4) (2024-04-11)
+
+
+### Bug Fixes
+
+* get query mock ([5850d9d](https://github.com/kitabisa/smockr/commit/5850d9d833f21c103f553d907702d5a3581f68e5))
+* start server ([8e7fb2b](https://github.com/kitabisa/smockr/commit/8e7fb2baa366fc9b37a9d3aae953ad7da8886081))
+* start server ([54fa43a](https://github.com/kitabisa/smockr/commit/54fa43a51b8a23f98c7f1bfdd8c4588a517e3a5d))
+
 ## [2.2.3](https://github.com/kitabisa/smockr/compare/v2.2.2...v2.2.3) (2024-04-10)
 
 

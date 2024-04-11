@@ -23,8 +23,6 @@ jobs:
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@ktbs'
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Install dependencies
@@ -38,5 +36,5 @@ jobs:
       - name: Publish package
         run: npm publish
         env:
-          BUN_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}

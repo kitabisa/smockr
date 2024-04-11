@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.7](https://github.com/kitabisa/smockr/compare/v2.2.6...v2.2.7) (2024-04-11)
+
+
+### Bug Fixes
+
+* add .npmrc ([3a770e0](https://github.com/kitabisa/smockr/commit/3a770e0d8543c65a40b260636b0149fb5e19d9a4))
+
 ## [2.2.6](https://github.com/kitabisa/smockr/compare/v2.2.5...v2.2.6) (2024-04-11)
 
 

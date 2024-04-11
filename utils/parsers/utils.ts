@@ -1,5 +1,2 @@
-export const withRecursive = (z: any, withFunctions: ((z: any) => any)[]) => {
-  return withFunctions.reduce((z, fn) => {
-    return fn(z);
-  }, z);
-}
+export const withRecursive = (z: any, withFunctions: ((z: any) => any)[]) =>
+  withFunctions.reduce((z, fn) => fn(z), z)

@@ -3,12 +3,12 @@ import path from 'path'
 
 /**
  * smockr is CLI tools for serve supple mock server
- * with random fake data using faker.js
+ * with random fake data using Faker.js
  *
- * @usage {cliName} --port 8080 --secret "yoursecret"
+ * @usage {cliName} --port 8080
  *
  * @param {number}   [port=8080] define port
- * @param {string}   [secret=""] define secret
+ * @param {string}   [secret=""] define secret for client header X-Smocker-Secret
  * @param {string}   [allowOrigin="*"] define allow cors origin
  * @param {string}   [allowMethods="GET,HEAD,PUT,PATCH,POST,DELETE"] define allow cors methods
  * @param {string}   [allowHeaders="*"] define allow cors headers
@@ -21,12 +21,15 @@ export default async function main(
   allowHeaders?: string,
 ) {
   const server = path.resolve(__dirname, '../../bin/server.js')
-  execSync(`
+  execSync(
+    `
     PORT=${port} \
     SECRET_KEY=${secret} \
     ALLOWED_ORIGIN=${allowOrigin} \
     ALLOWED_METHODS=${allowMethods} \
     ALLOWED_HEADERS=${allowHeaders} \
     bun ${server}
-  `, { stdio: 'inherit' })
+  `,
+    { stdio: 'inherit' },
+  )
 }

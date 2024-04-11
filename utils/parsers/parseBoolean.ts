@@ -1,6 +1,5 @@
-import type { JSONSchema7 } from "json-schema";
-import { z } from "zod";
+import type { JSONSchema7 } from 'json-schema'
+import { z } from 'zod'
 
-export const parseBoolean = (schema: JSONSchema7 & { type: "boolean"; }) => {
-  return z.boolean();
-};
+export const parseBoolean = (_schema: JSONSchema7 & { type: 'boolean' }) =>
+  z.boolean()

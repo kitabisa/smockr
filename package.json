@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Kitabisa Engineer <engineer@kitabisa.com>",
   "scripts": {
-    "prepare": "husky",
+    "prepare": "husky || true",
     "precompile": "rimraf ./bin ./dist",
     "compile": "bun build ./server.ts --outdir ./bin --target bun --format esm --minify",
     "predev": "bun run compile",

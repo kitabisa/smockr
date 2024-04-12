@@ -59,9 +59,9 @@ app.all('*', (req: Request, res: Response) => {
 
   if (
     (!body && req.method === 'GET') ||
-    status < 100 ||
-    status > 599 ||
-    (bodySchema && !['PUT', 'POST', 'PATCH'].includes(req.method))
+    (bodySchema && !['PUT', 'POST', 'PATCH'].includes(req.method)) ||
+    status < 200 ||
+    status > 599
   ) {
     res.status(422)
     res.send({

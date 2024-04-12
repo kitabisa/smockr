@@ -26,12 +26,6 @@ You can enter `uname -ms` command in your terminal to see yours.
 
 ## Quick Start
 
-Setup environment (and modify your env):
-
-```
-$ cp .env.example .env
-```
-
 Install dependencies:
 
 ```

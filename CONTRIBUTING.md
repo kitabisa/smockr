@@ -50,9 +50,27 @@ GET http://localhost:8080/?mock[response][body]={"ping":"pong"}
 
 HTTP/1.1 200 OK
 content-type: application/json
-content-length: 15
+content-length: 20
 
-{"ping":"pong"}
+{
+  "ping": "pong"
+}
+```
+
+Specify a search body param with random generate mock data using faker.js.
+
+```http
+GET http://localhost:8080/?mock[response][body]={"name":"{{person.fullName}}","avatar":"{{image.avatar}}"}
+
+
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: 91
+
+{
+  "name": "Allen Brown",
+  "avatar": "https://avatars.githubusercontent.com/u/97165289"
+}
 ```
 
 ### Status
@@ -140,7 +158,7 @@ async function getUsers() {
   const response = await fetch(`http://localhost:8080/users?${queryParams}`, {
     method: "GET",
     headers: {
-      "X-Smocker-Secret": `${process.env.SMOCKER_SECRET_KEY}`,
+      "X-Smockr-Secret": `${process.env.SMOCKER_SECRET_KEY}`,
     },
   });
   

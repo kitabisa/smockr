@@ -12,7 +12,7 @@ const corsOptions = cors({
   origin: process.env.ALLOWED_ORIGIN,
   methods: process.env.ALLOWED_METHODS,
   allowedHeaders: process.env.ALLOWED_HEADERS
-    ? `X-Smocker-Secret,${process.env.ALLOWED_HEADERS}`
+    ? `X-Smockr-Secret,${process.env.ALLOWED_HEADERS}`
     : '*',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 })
@@ -23,14 +23,14 @@ app.use(express.json())
 
 app.use(morgan('combined'))
 
-app.get('/health-check', (req: Request, res: Response) => {
-  res.send({ health_check: "up" })
+app.get('/health-check', (_req: Request, res: Response) => {
+  res.send({ health_check: 'up' })
 })
 
 app.all('*', (req: Request, res: Response) => {
   const { mock }: any = req.query
   const appSecretKey = process.env.SECRET_KEY || ''
-  const secretKey = req.headers['X-Smocker-Secret'] || ''
+  const secretKey = req.headers['X-Smockr-Secret'] || ''
   const bodySchema = mock?.request?.body?.schema
     ? JSON.parse(mock.request.body.schema.toString())
     : undefined

@@ -38,6 +38,7 @@ $ smockr \
 --allowMethods "GET,POST,PATCH" \
 --allowHeaders "Content-Type,Authorization"
 ```
+When you define secret as a parameter, the client request must be include `X-Smockr-Secret` header with the same value
 
 See a list of all available options
 
@@ -63,7 +64,7 @@ GET http://localhost:8080/?mock[response][body]={"ping":"pong"}
 
 HTTP/1.1 200 OK
 content-type: application/json
-content-length: 15
+content-length: 20
 
 {
   "ping": "pong"
@@ -78,7 +79,7 @@ GET http://localhost:8080/?mock[response][body]={"name":"{{person.fullName}}","a
 
 HTTP/1.1 200 OK
 content-type: application/json
-content-length: 50
+content-length: 91
 
 {
   "name": "Allen Brown",

@@ -5,7 +5,7 @@ CLI tools for serve supple mock server with random fake data using <a href="http
 ## Features
 
  * Using [Bun](https://github.com/oven-sh/bun)
- * Using [Express.js](https://github.com/expressjs/express) for API routes
+ * Using [Express.js](https://github.com/expressjs/express)
  * Written in [Typescript](https://github.com/microsoft/TypeScript)
  * Random fake data using [Faker.js](https://github.com/faker-js/faker)
  * Schema validation using JSON Schema

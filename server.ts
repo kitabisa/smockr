@@ -2,6 +2,7 @@ import { parseSchema } from '@/utils/parsers/parseSchema'
 import { faker } from '@faker-js/faker'
 import cors from 'cors'
 import express, { Request, Response } from 'express'
+import morgan from 'morgan'
 import pkg from './package.json'
 
 const app = express()
@@ -19,6 +20,12 @@ const corsOptions = cors({
 app.use(corsOptions)
 
 app.use(express.json())
+
+app.use(morgan('combined'))
+
+app.get('/health-check', (req: Request, res: Response) => {
+  res.send({ health_check: "up" })
+})
 
 app.all('*', (req: Request, res: Response) => {
   const { mock }: any = req.query

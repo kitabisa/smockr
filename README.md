@@ -5,7 +5,7 @@ CLI tools for serve supple mock server with random fake data using <a href="http
 ## Features
 
  * Using [Bun](https://github.com/oven-sh/bun)
- * Using [Express.js](https://github.com/expressjs/express) for API routes
+ * Using [Express.js](https://github.com/expressjs/express)
  * Written in [Typescript](https://github.com/microsoft/TypeScript)
  * Random fake data using [Faker.js](https://github.com/faker-js/faker)
  * Schema validation using JSON Schema 7
@@ -17,7 +17,7 @@ CLI tools for serve supple mock server with random fake data using <a href="http
 Setup smockr
 
 ```
-$ npm install --global @ktbs/smockr
+$ npm install -g @ktbs/smockr
 ```
 
 ## Quick Start
@@ -65,7 +65,25 @@ HTTP/1.1 200 OK
 content-type: application/json
 content-length: 15
 
-{"ping":"pong"}
+{
+  "ping": "pong"
+}
+```
+
+Specify a search body param with random generate mock data using faker.js.
+
+```http
+GET http://localhost:8080/?mock[response][body]={"name":"{{person.fullName}}","avatar":"{{image.avatar}}"}
+
+
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: 50
+
+{
+  "name": "Allen Brown",
+  "avatar": "https://avatars.githubusercontent.com/u/97165289"
+}
 ```
 
 ### Status

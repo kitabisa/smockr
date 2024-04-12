@@ -38,6 +38,8 @@
     "api",
     "mock",
     "mocking",
+    "faker",
+    "fakerjs",
     "bun",
     "cli",
     "tools",

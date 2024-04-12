@@ -64,10 +64,10 @@ GET http://localhost:8080/?mock[response][body]={"ping":"pong"}
 
 HTTP/1.1 200 OK
 content-type: application/json
-content-length: 20
+content-length: 18
 
 {
-  "ping": "pong"
+  ping: "pong"
 }
 ```
 
@@ -79,11 +79,11 @@ GET http://localhost:8080/?mock[response][body]={"name":"{{person.fullName}}","a
 
 HTTP/1.1 200 OK
 content-type: application/json
-content-length: 91
+content-length: 87
 
 {
-  "name": "Allen Brown",
-  "avatar": "https://avatars.githubusercontent.com/u/97165289"
+  name: "Allen Brown",
+  avatar: "https://avatars.githubusercontent.com/u/97165289"
 }
 ```
 
@@ -128,4 +128,21 @@ Specify a search schema validation in json schema (stringify) to set request bod
 
 ```http
 GET http://localhost:8080/?mock[request][body][schema]=${{ stringify json schema }}
+```
+
+### Health check
+
+Predefined health check route.
+
+```http
+GET http://localhost:8080/health-check
+
+
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: 24
+
+{
+  health_check: "up"
+}
 ```

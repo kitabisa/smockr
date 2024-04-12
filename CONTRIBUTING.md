@@ -50,10 +50,10 @@ GET http://localhost:8080/?mock[response][body]={"ping":"pong"}
 
 HTTP/1.1 200 OK
 content-type: application/json
-content-length: 20
+content-length: 18
 
 {
-  "ping": "pong"
+  ping: "pong"
 }
 ```
 
@@ -65,11 +65,11 @@ GET http://localhost:8080/?mock[response][body]={"name":"{{person.fullName}}","a
 
 HTTP/1.1 200 OK
 content-type: application/json
-content-length: 91
+content-length: 87
 
 {
-  "name": "Allen Brown",
-  "avatar": "https://avatars.githubusercontent.com/u/97165289"
+  name: "Allen Brown",
+  avatar: "https://avatars.githubusercontent.com/u/97165289"
 }
 ```
 
@@ -116,53 +116,19 @@ Specify a search schema validation in json schema (stringify) to set request bod
 GET http://localhost:8080/?mock[request][body][schema]=${{ stringify json schema }}
 ```
 
-## Example Code
+### Health check
 
-```
-async function getUsers() {
-  const queryParams = new URLSearchParams({
-    mock: {
-      response: {
-        body: {
-          api_code: 101000,
-          data: [
-            ...(() => {
-              let items = [];
-              for (let i = 0; i < 10; i++) {
-                items.push({
-                  id: 1,
-                  username: "{{internet.userName}}",
-                  email: "{{internet.email}}",
-                  avatar: "{{image.avatar}}",
-                  birthdate: "{{date.birthdate}}",
-                });
-              }
-              return items;
-            })()
-          ],
-          meta: {
-            version: "v1.84.0",
-            api_status: "unstable",
-            api_env: "prod"
-          },
-        },
-        headers: {
-          "Content-Type": "application/json"
-        },
-        status: 200,
-        delay: 3000,
-      },
-    },
-  }).toString();
+Predefined health check route.
 
-  const response = await fetch(`http://localhost:8080/users?${queryParams}`, {
-    method: "GET",
-    headers: {
-      "X-Smockr-Secret": `${process.env.SMOCKER_SECRET_KEY}`,
-    },
-  });
-  
-  const users = await response.json();
-  console.log(users);
+```http
+GET http://localhost:8080/health-check
+
+
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: 24
+
+{
+  health_check: "up"
 }
 ```

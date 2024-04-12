@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/kitabisa/smockr/compare/v2.2.7...v2.3.0) (2024-04-12)
+
+
+### Features
+
+* implement logger ([#56](https://github.com/kitabisa/smockr/issues/56)) ([d41c3e0](https://github.com/kitabisa/smockr/commit/d41c3e04c51f0fc2f4e0f34f9f7ed1d58cfe8174))
+
 ## [2.2.7](https://github.com/kitabisa/smockr/compare/v2.2.6...v2.2.7) (2024-04-11)
 
 

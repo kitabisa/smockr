@@ -2,6 +2,7 @@ import { parseSchema } from '@/utils/parsers/parseSchema'
 import { faker } from '@faker-js/faker'
 import cors from 'cors'
 import express, { Request, Response } from 'express'
+import morgan from 'morgan'
 import pkg from './package.json'
 
 const app = express()
@@ -11,7 +12,7 @@ const corsOptions = cors({
   origin: process.env.ALLOWED_ORIGIN,
   methods: process.env.ALLOWED_METHODS,
   allowedHeaders: process.env.ALLOWED_HEADERS
-    ? `X-Smocker-Secret,${process.env.ALLOWED_HEADERS}`
+    ? `X-Smockr-Secret,${process.env.ALLOWED_HEADERS}`
     : '*',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 })
@@ -20,10 +21,16 @@ app.use(corsOptions)
 
 app.use(express.json())
 
+app.use(morgan('combined'))
+
+app.get('/health-check', (_req: Request, res: Response) => {
+  res.send({ health_check: 'up' })
+})
+
 app.all('*', (req: Request, res: Response) => {
   const { mock }: any = req.query
   const appSecretKey = process.env.SECRET_KEY || ''
-  const secretKey = req.headers['X-Smocker-Secret'] || ''
+  const secretKey = req.headers['X-Smockr-Secret'] || ''
   const bodySchema = mock?.request?.body?.schema
     ? JSON.parse(mock.request.body.schema.toString())
     : undefined
@@ -52,9 +59,9 @@ app.all('*', (req: Request, res: Response) => {
 
   if (
     (!body && req.method === 'GET') ||
-    status < 100 ||
-    status > 599 ||
-    (bodySchema && !['PUT', 'POST', 'PATCH'].includes(req.method))
+    (bodySchema && !['PUT', 'POST', 'PATCH'].includes(req.method)) ||
+    status < 200 ||
+    status > 599
   ) {
     res.status(422)
     res.send({

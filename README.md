@@ -5,7 +5,7 @@ CLI tools for serve supple mock server with random fake data using <a href="http
 ## Features
 
  * Using [Bun](https://github.com/oven-sh/bun)
- * Using [Express.js](https://github.com/expressjs/express) for API routes
+ * Using [Express.js](https://github.com/expressjs/express)
  * Written in [Typescript](https://github.com/microsoft/TypeScript)
  * Random fake data using [Faker.js](https://github.com/faker-js/faker)
  * Schema validation using JSON Schema 7
@@ -17,7 +17,7 @@ CLI tools for serve supple mock server with random fake data using <a href="http
 Setup smockr
 
 ```
-$ npm install --global @ktbs/smockr
+$ npm install -g @ktbs/smockr
 ```
 
 ## Quick Start
@@ -38,6 +38,7 @@ $ smockr \
 --allowMethods "GET,POST,PATCH" \
 --allowHeaders "Content-Type,Authorization"
 ```
+When you define secret as a parameter, the client request must be include `X-Smockr-Secret` header with the same value
 
 See a list of all available options
 
@@ -63,9 +64,27 @@ GET http://localhost:8080/?mock[response][body]={"ping":"pong"}
 
 HTTP/1.1 200 OK
 content-type: application/json
-content-length: 15
+content-length: 18
 
-{"ping":"pong"}
+{
+  ping: "pong"
+}
+```
+
+Specify a search body param with random generate mock data using faker.js.
+
+```http
+GET http://localhost:8080/?mock[response][body]={"name":"{{person.fullName}}","avatar":"{{image.avatar}}"}
+
+
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: 87
+
+{
+  name: "Allen Brown",
+  avatar: "https://avatars.githubusercontent.com/u/97165289"
+}
 ```
 
 ### Status
@@ -109,4 +128,21 @@ Specify a search schema validation in json schema (stringify) to set request bod
 
 ```http
 GET http://localhost:8080/?mock[request][body][schema]=${{ stringify json schema }}
+```
+
+### Health check
+
+Predefined health check route.
+
+```http
+GET http://localhost:8080/health-check
+
+
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: 24
+
+{
+  health_check: "up"
+}
 ```

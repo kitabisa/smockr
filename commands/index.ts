@@ -8,7 +8,7 @@ import path from 'path'
  * @usage {cliName} --port 8080
  *
  * @param {number}   [port=8080] define port
- * @param {string}   [secret=""] define secret for client header X-Smocker-Secret
+ * @param {string}   [secret=""] define secret for client header X-Smockr-Secret
  * @param {string}   [allowOrigin="*"] define allow cors origin
  * @param {string}   [allowMethods="GET,HEAD,PUT,PATCH,POST,DELETE"] define allow cors methods
  * @param {string}   [allowHeaders="*"] define allow cors headers

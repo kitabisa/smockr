@@ -7,6 +7,7 @@ import pkg from './package.json'
 
 const app = express()
 const port = process.env.PORT || 8080
+const clientSecret = process.env.SECRET_KEY || ''
 
 const corsOptions = cors({
   origin: process.env.ALLOWED_ORIGIN,
@@ -29,11 +30,7 @@ app.get('/health-check', (_req: Request, res: Response) => {
 
 app.all('*', (req: Request, res: Response) => {
   const { mock }: any = req.query
-  const appSecretKey = process.env.SECRET_KEY || ''
-  const secretKey = req.headers['X-Smockr-Secret'] || ''
-  const bodySchema = mock?.request?.body?.schema
-    ? JSON.parse(mock.request.body.schema.toString())
-    : undefined
+  const secret = req.headers['X-Smockr-Secret']
   const body = mock?.response?.body
     ? faker.helpers.fake(mock.response.body)
     : undefined
@@ -44,9 +41,12 @@ app.all('*', (req: Request, res: Response) => {
   }
   const status = mock?.response?.status ? Number(mock.response.status) : 200
   const delay = mock?.response?.delay ? Number(mock.response.delay) : 0
+  const bodySchema = mock?.request?.body?.schema
+    ? JSON.parse(mock.request.body.schema.toString())
+    : undefined
 
-  if (appSecretKey) {
-    if (secretKey !== appSecretKey) {
+  if (clientSecret) {
+    if (secret !== clientSecret) {
       res.status(401)
       res.send({
         code: 401,
@@ -58,8 +58,8 @@ app.all('*', (req: Request, res: Response) => {
   }
 
   if (
-    (!body && req.method === 'GET') ||
-    (bodySchema && !['PUT', 'POST', 'PATCH'].includes(req.method)) ||
+    !mock ||
+    (bodySchema && !req.body) ||
     status < 200 ||
     status > 599
   ) {
@@ -67,7 +67,7 @@ app.all('*', (req: Request, res: Response) => {
     res.send({
       code: 422,
       message:
-        'invalid mock params, read our docs on https://github.com/kitabisa/smockr?tab=readme-ov-file#usage',
+        'invalid request, read our docs for using mock https://github.com/kitabisa/smockr?tab=readme-ov-file#usage',
     })
     return
   }

@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.0](https://github.com/kitabisa/smockr/compare/v2.3.0...v2.4.0) (2024-04-13)
+
+
+### Features
+
+* using json schema validator instead of zod ([#59](https://github.com/kitabisa/smockr/issues/59)) ([af4fc21](https://github.com/kitabisa/smockr/commit/af4fc214a8a65cadefa3922811a5b44caaacac98))
+
+
+### Bug Fixes
+
+* Update README.md ([d46fc93](https://github.com/kitabisa/smockr/commit/d46fc933508b9957f467af177d0960d616299a67))
+* Update README.md ([3dc9931](https://github.com/kitabisa/smockr/commit/3dc9931d535608c2370e2e8c0cad311a70091c58))
+* Update server.ts ([f7ae6ef](https://github.com/kitabisa/smockr/commit/f7ae6efd9901469555bda0107fc8e68bedf20b7d))
+
 ## [2.3.0](https://github.com/kitabisa/smockr/compare/v2.2.7...v2.3.0) (2024-04-12)
 
 

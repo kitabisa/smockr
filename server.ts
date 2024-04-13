@@ -110,7 +110,7 @@ app.listen(port, () => {
   console.log(`   \x1b[33m▲ ${pkg.name} ${pkg.version}\x1b[0m`)
   console.log(`   - Environment:`)
   console.log(`     PORT=${port}`)
-  console.log(`     SECRET_KEY=${secret ? dev ? secret : '******' : 'undefined'}`)
+  console.log(`     SECRET_KEY=${dev ? secret : '******'}`)
   console.log(`     ALLOWED_ORIGIN=${allowOrigin}`)
   console.log(`     ALLOWED_METHODS=${allowMethods}`)
   console.log(`     ALLOWED_HEADERS=${allowHeaders}\n`)

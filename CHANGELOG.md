@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/kitabisa/smockr/compare/v2.4.0...v2.4.1) (2024-04-13)
+
+
+### Bug Fixes
+
+* update server.ts ([#61](https://github.com/kitabisa/smockr/issues/61)) ([45f8ec3](https://github.com/kitabisa/smockr/commit/45f8ec340b013fe6856063854942cd2f4574c81b))
+
 ## [2.4.0](https://github.com/kitabisa/smockr/compare/v2.3.0...v2.4.0) (2024-04-13)
 
 

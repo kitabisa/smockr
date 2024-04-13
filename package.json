@@ -51,15 +51,12 @@
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
     "@opaline/core": "^0.5.5",
-    "@typescript-eslint/eslint-plugin": "^7.6.0",
-    "@typescript-eslint/parser": "^7.6.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
-    "json-schema": "^0.4.0",
+    "jsonschema": "^1.4.1",
     "morgan": "^1.10.0",
     "react": "^18",
-    "react-dom": "^18",
-    "zod": "^3.22.4"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@commitlint/cli": "17.8.1",
@@ -72,6 +69,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
+    "@typescript-eslint/parser": "^7.6.0",
     "danger": "^11.3.1",
     "danger-plugin-conventional-commitlint": "^3.0.0",
     "eslint": "^8",

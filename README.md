@@ -82,8 +82,8 @@ content-type: application/json
 content-length: 87
 
 {
-  name: "Allen Brown",
-  avatar: "https://avatars.githubusercontent.com/u/97165289"
+  "name": "Allen Brown",
+  "avatar": "https://avatars.githubusercontent.com/u/97165289"
 }
 ```
 
@@ -143,6 +143,6 @@ content-type: application/json
 content-length: 24
 
 {
-  health_check: "up"
+  "health_check": "up"
 }
 ```

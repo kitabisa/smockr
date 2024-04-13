@@ -8,7 +8,7 @@ CLI tools for serve supple mock server with random fake data using <a href="http
  * Using [Express.js](https://github.com/expressjs/express)
  * Written in [Typescript](https://github.com/microsoft/TypeScript)
  * Random fake data using [Faker.js](https://github.com/faker-js/faker)
- * Schema validation using JSON Schema 7
+ * Request body validation using [JSON Schema](https://github.com/json-schema-org/json-schema-spec/blob/main/jsonschema-validation.md)
  * Flexible on-demand response (can modify body, status, headers, and delayed response)
  * No data storage needed
 
@@ -71,7 +71,7 @@ content-length: 18
 }
 ```
 
-Specify a search body param with random generate mock data using faker.js.
+Specify a search body param with random fake data using faker.js.
 
 ```http
 GET http://localhost:8080/?mock[response][body]={"name":"{{person.fullName}}","avatar":"{{image.avatar}}"}
@@ -127,7 +127,7 @@ GET http://localhost:8080/?mock[response][delay]=3000
 Specify a search schema validation in json schema (stringify) to set request body validations.
 
 ```http
-GET http://localhost:8080/?mock[request][body][schema]=${{ stringify json schema }}
+GET http://localhost:8080/?mock[request][body][schema]={"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer","minimum":17}},"required":["name"]}
 ```
 
 ### Health check

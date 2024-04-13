@@ -1,7 +1,7 @@
-import { parseSchema } from '@/utils/parsers/parseSchema'
 import { faker } from '@faker-js/faker'
 import cors from 'cors'
 import express, { Request, Response } from 'express'
+import { validate } from 'jsonschema'
 import morgan from 'morgan'
 import pkg from './package.json'
 
@@ -59,7 +59,6 @@ app.all('*', (req: Request, res: Response) => {
 
   if (
     !mock ||
-    (bodySchema && !req.body) ||
     status < 200 ||
     status > 599
   ) {
@@ -74,14 +73,16 @@ app.all('*', (req: Request, res: Response) => {
 
   if (bodySchema) {
     const jsonSchema = JSON.parse(bodySchema.toString())
-    const zodSchema = parseSchema(jsonSchema)
-    const validation = zodSchema.safeParse(req.body)
+    const validation = validate(req.body, jsonSchema, {
+      required: true,
+      allowUnknownAttributes: false,
+    })
 
-    if (!validation.success) {
+    if (!validation.valid) {
       res.status(400)
       res.send({
         code: 400,
-        message: `${validation.error.errors[0].path[0]} ${validation.error.errors[0].message.toLocaleLowerCase()}`,
+        message: validation.errors[0].message,
       })
       return
     }

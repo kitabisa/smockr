@@ -67,7 +67,7 @@ content-type: application/json
 content-length: 18
 
 {
-  ping: "pong"
+  "ping": "pong"
 }
 ```
 

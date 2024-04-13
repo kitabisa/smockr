@@ -6,15 +6,19 @@ import morgan from 'morgan'
 import pkg from './package.json'
 
 const app = express()
+const dev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 8080
-const clientSecret = process.env.SECRET_KEY || ''
+const secret = process.env.SECRET_KEY || ''
+const allowOrigin = process.env.ALLOWED_ORIGIN || '*'
+const allowMethods = process.env.ALLOWED_METHODS || 'GET,HEAD,PUT,PATCH,POST,DELETE'
+const allowHeaders = process.env.ALLOWED_HEADERS
+  ? `X-Smockr-Secret,${process.env.ALLOWED_HEADERS}`
+  : '*'
 
 const corsOptions = cors({
-  origin: process.env.ALLOWED_ORIGIN,
-  methods: process.env.ALLOWED_METHODS,
-  allowedHeaders: process.env.ALLOWED_HEADERS
-    ? `X-Smockr-Secret,${process.env.ALLOWED_HEADERS}`
-    : '*',
+  origin: allowOrigin,
+  methods: allowMethods,
+  allowedHeaders: allowHeaders,
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 })
 
@@ -30,7 +34,7 @@ app.get('/health-check', (_req: Request, res: Response) => {
 
 app.all('*', (req: Request, res: Response) => {
   const { mock }: any = req.query
-  const secret = req.headers['X-Smockr-Secret']
+  const clientSecret = req.headers['X-Smockr-Secret']
   const body = mock?.response?.body
     ? faker.helpers.fake(mock.response.body)
     : undefined
@@ -45,8 +49,8 @@ app.all('*', (req: Request, res: Response) => {
     ? JSON.parse(mock.request.body.schema.toString())
     : undefined
 
-  if (clientSecret) {
-    if (secret !== clientSecret) {
+  if (secret) {
+    if (clientSecret !== secret) {
       res.status(401)
       res.send({
         code: 401,
@@ -104,6 +108,12 @@ app.all('*', (req: Request, res: Response) => {
 
 app.listen(port, () => {
   console.log(`   \x1b[33m▲ ${pkg.name} ${pkg.version}\x1b[0m`)
+  console.log(`   - Environment:`)
+  console.log(`     PORT=${port}`)
+  console.log(`     SECRET_KEY=${dev ? secret : '******'}`)
+  console.log(`     ALLOWED_ORIGIN=${allowOrigin}`)
+  console.log(`     ALLOWED_METHODS=${allowMethods}`)
+  console.log(`     ALLOWED_HEADERS=${allowHeaders}\n`)
   console.log(`   - Network:      http://localhost:${port}`)
   console.log(`   - Local:        http://0.0.0.0:${port}`)
 })

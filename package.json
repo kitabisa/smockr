@@ -10,7 +10,7 @@
     "compile": "bun build ./server.ts --outdir ./bin --target bun --format esm --minify",
     "predev": "bun run compile",
     "dev": "cd commands && opaline dev",
-    "prebuild": "bun run compile",
+    "prebuild": "NODE_ENV=production bun run compile",
     "build": "cd commands && opaline build",
     "lint": "eslint $(git diff --diff-filter=d --name-only main -- '***.js' '***.ts')",
     "lint:all": "eslint commands utils server.ts --ext .js,.ts",

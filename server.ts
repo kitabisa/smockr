@@ -9,16 +9,16 @@ const app = express()
 const dev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 8080
 const secret = process.env.SECRET_KEY || ''
-const allowedOrigin = process.env.ALLOWED_ORIGIN || '*'
-const allowedMethods = process.env.ALLOWED_METHODS || 'GET,HEAD,PUT,PATCH,POST,DELETE'
-const allowedHeaders = process.env.ALLOWED_HEADERS
+const allowOrigin = process.env.ALLOWED_ORIGIN || '*'
+const allowMethods = process.env.ALLOWED_METHODS || 'GET,HEAD,PUT,PATCH,POST,DELETE'
+const allowHeaders = process.env.ALLOWED_HEADERS
   ? `X-Smockr-Secret,${process.env.ALLOWED_HEADERS}`
   : '*'
 
 const corsOptions = cors({
-  origin: allowedOrigin,
-  methods: allowedMethods,
-  allowedHeaders: allowedHeaders,
+  origin: allowOrigin,
+  methods: allowMethods,
+  allowedHeaders: allowHeaders,
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 })
 
@@ -111,9 +111,9 @@ app.listen(port, () => {
   console.log(`   - Environment:`)
   console.log(`     PORT=${port}`)
   console.log(`     SECRET_KEY=${secret ? dev ? secret : '******' : 'undefined'}`)
-  console.log(`     ALLOWED_ORIGIN=${allowedOrigin}`)
-  console.log(`     ALLOWED_METHODS=${allowedMethods}`)
-  console.log(`     ALLOWED_HEADERS=${allowedHeaders}`)
+  console.log(`     ALLOWED_ORIGIN=${allowOrigin}`)
+  console.log(`     ALLOWED_METHODS=${allowMethods}`)
+  console.log(`     ALLOWED_HEADERS=${allowHeaders}\n`)
   console.log(`   - Network:      http://localhost:${port}`)
   console.log(`   - Local:        http://0.0.0.0:${port}`)
 })

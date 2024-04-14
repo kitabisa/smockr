@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.4.2](https://github.com/kitabisa/smockr/compare/v2.4.1...v2.4.2) (2024-04-14)
+
+
+### Bug Fixes
+
+* error message handler ([0218d8c](https://github.com/kitabisa/smockr/commit/0218d8c50d4ab51050335c3cd02ea612db34c304))
+* update CONTRIBUTING.md ([676fb54](https://github.com/kitabisa/smockr/commit/676fb549ae26bf90dcc392702e8381091b1bf9cc))
+* update README.md ([1ab7e09](https://github.com/kitabisa/smockr/commit/1ab7e096bc781fb6e9f1dbdfeb36a242b06d7314))
+* update README.md ([9ca3d70](https://github.com/kitabisa/smockr/commit/9ca3d70cb80ee254dbf237088fc93824da809067))
+
 ## [2.4.1](https://github.com/kitabisa/smockr/compare/v2.4.0...v2.4.1) (2024-04-13)
 
 

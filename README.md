@@ -127,7 +127,21 @@ GET http://localhost:8080/?mock[response][delay]=3000
 Specify a search schema validation in json schema (stringify) to set request body validations.
 
 ```http
-GET http://localhost:8080/?mock[request][body][schema]={"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer","minimum":17}},"required":["name"]}
+POST http://localhost:8080/?mock[request][body][schema]={"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer","minimum":17}},"required":["name"]}
+
+{
+  "age": 20
+}
+
+
+HTTP/1.1 400 Bad Request
+content-type: application/json
+content-length: 87
+
+{
+  "code": 400,
+  "message": "Name is required"
+}
 ```
 
 ### Health check

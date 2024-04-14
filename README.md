@@ -128,6 +128,7 @@ Specify a search schema validation in json schema (stringify) to set request bod
 
 ```http
 POST http://localhost:8080/?mock[request][body][schema]={"type":"object","properties":{"name":{"type":"string"},"age":{"type":"integer","minimum":17}},"required":["name"]}
+
 {
   "age": 20
 }

@@ -136,7 +136,7 @@ POST http://localhost:8080/?mock[request][body][schema]={"type":"object","proper
 
 HTTP/1.1 400 Bad Request
 content-type: application/json
-content-length: 87
+content-length: 53
 
 {
   "code": 400,

@@ -120,6 +120,11 @@ Specify a search delay param in milliseconds in order to delay the response.
 
 ```http
 GET http://localhost:8080/?mock[response][delay]=3000
+
+
+HTTP/1.1 200 OK
+content-type: application/json
+content-length: 0
 ```
 
 ### Schema Validations

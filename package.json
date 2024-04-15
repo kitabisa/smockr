@@ -1,5 +1,5 @@
 {
-  "name": "@ktbs/smockr",
+  "name": "@kitabisa/smockr",
   "version": "2.4.3",
   "description": "CLI tools for serve supple mock server with random fake data using Faker.js",
   "license": "MIT",

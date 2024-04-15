@@ -17,7 +17,7 @@ CLI tools for serve supple mock server with random fake data using <a href="http
 Setup smockr
 
 ```
-$ npm install -g @ktbs/smockr
+$ npm install -g @kitabisa/smockr
 ```
 
 ## Quick Start

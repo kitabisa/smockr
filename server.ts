@@ -60,7 +60,7 @@ app.all('*', (req: Request, res: Response) => {
         code: 401,
         message:
           'Your secret is unauthorized, please check X-Smockr-Secret header on your request.',
-        type: 'UnauthorizedException',
+        type: 'AuthException',
       })
       return
     }
@@ -72,7 +72,7 @@ app.all('*', (req: Request, res: Response) => {
       code: 422,
       message:
         'Invalid mock, read our docs for using mock https://github.com/kitabisa/smockr?tab=readme-ov-file#usage.',
-      type: 'InvalidMockException',
+      type: 'MockSearchParamsException',
     })
     return
   }
@@ -85,7 +85,7 @@ app.all('*', (req: Request, res: Response) => {
       res.send({
         code: 422,
         message: error.message,
-        type: 'MockResponseBodyFakerException',
+        type: 'FakerHelperException',
       })
       return
     }
@@ -103,7 +103,7 @@ app.all('*', (req: Request, res: Response) => {
         code: 422,
         message:
           'Mock response headers is not valid JSON string, read our docs for using mock https://github.com/kitabisa/smockr?tab=readme-ov-file#usage.',
-        type: 'MockResponseHeadersException',
+        type: 'MockSearchParamsException',
       })
       return
     }
@@ -124,7 +124,7 @@ app.all('*', (req: Request, res: Response) => {
         code: 422,
         message:
           'Mock response status is not valid HTTP status code, read our docs for using mock https://github.com/kitabisa/smockr?tab=readme-ov-file#usage.',
-        type: 'MockResponseStatusException',
+        type: 'MockSearchParamsException',
       })
       return
     }
@@ -141,7 +141,7 @@ app.all('*', (req: Request, res: Response) => {
         code: 422,
         message:
           'Mock response delay is not valid number, read our docs for using mock https://github.com/kitabisa/smockr?tab=readme-ov-file#usage.',
-        type: 'MockResponseDelayException',
+        type: 'MockSearchParamsException',
       })
       return
     }
@@ -166,7 +166,7 @@ app.all('*', (req: Request, res: Response) => {
         res.send({
           code: 400,
           message: msg && msg[0].toUpperCase() + msg.slice(1),
-          type: 'RequestBodyException',
+          type: 'SchemaValidationException',
         })
         return
       }
@@ -176,7 +176,7 @@ app.all('*', (req: Request, res: Response) => {
         code: 422,
         message:
           'Mock request body schema is not valid JSON schema validation string, read our docs for using mock https://github.com/kitabisa/smockr?tab=readme-ov-file#usage.',
-        type: 'MockRequestBodySchemaException',
+        type: 'MockSearchParamsException',
       })
       return
     }

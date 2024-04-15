@@ -152,6 +152,17 @@ app.all('*', (req: Request, res: Response) => {
   if (bodySchema) {
     try {
       bodySchema = JSON.parse(bodySchema)
+    } catch (_error: any) {
+      res.status(422)
+      res.send({
+        code: 422,
+        message:
+          'Mock request body schema is not valid JSON schema validation string, read our docs for using mock https://github.com/kitabisa/smockr?tab=readme-ov-file#usage.',
+        type: 'MockSearchParamsException',
+      })
+      return
+    }
+    try {
       const validation = validate(req.body, bodySchema, {
         required: true,
         allowUnknownAttributes: false,
@@ -170,13 +181,12 @@ app.all('*', (req: Request, res: Response) => {
         })
         return
       }
-    } catch (_error: any) {
+    } catch (error: any) {
       res.status(422)
       res.send({
         code: 422,
-        message:
-          'Mock request body schema is not valid JSON schema validation string, read our docs for using mock https://github.com/kitabisa/smockr?tab=readme-ov-file#usage.',
-        type: 'MockSearchParamsException',
+        message: error.message,
+        type: 'JSONSchemaHelperException',
       })
       return
     }

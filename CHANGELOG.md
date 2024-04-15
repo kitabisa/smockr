@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/kitabisa/smockr/compare/v2.4.3...v2.5.0) (2024-04-15)
+
+
+### Features
+
+* update npm org ([7e3d976](https://github.com/kitabisa/smockr/commit/7e3d9769fb79c7992bfa60855e56e5e86c268bb0))
+
 ## [2.4.3](https://github.com/kitabisa/smockr/compare/v2.4.2...v2.4.3) (2024-04-15)
 
 

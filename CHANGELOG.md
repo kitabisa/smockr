@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.1](https://github.com/kitabisa/smockr/compare/v2.5.0...v2.5.1) (2024-04-16)
+
+
+### Bug Fixes
+
+* registry npm publish ([b436eb1](https://github.com/kitabisa/smockr/commit/b436eb1ff9780c7dba77ca00f57b3369a84dbe1e))
+
 ## [2.5.0](https://github.com/kitabisa/smockr/compare/v2.4.3...v2.5.0) (2024-04-15)
 
 

@@ -34,7 +34,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Publish to npm
-        run: npm publish --access public  # Adjust access level if needed
+        run: npm publish --registry=https://registry.npmjs.org/ --access public  # Adjust access level if needed
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Publish to GitHub Packages

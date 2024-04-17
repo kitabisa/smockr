@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.5](https://github.com/kitabisa/smockr/compare/v2.5.4...v2.5.5) (2024-04-17)
+
+
+### Bug Fixes
+
+* update publish.yaml ([e1c7309](https://github.com/kitabisa/smockr/commit/e1c7309bff3a7bf1d7736efda9269a4751787c23))
+
 ## [2.5.4](https://github.com/kitabisa/smockr/compare/v2.5.3...v2.5.4) (2024-04-17)
 
 

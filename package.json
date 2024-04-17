@@ -24,6 +24,9 @@
     "bin/*",
     "dist/*"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kitabisa/smockr.git"

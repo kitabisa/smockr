@@ -33,12 +33,8 @@ jobs:
         run: bun run build
         if: ${{ steps.release.outputs.release_created }}
 
-      - name: Publish to npm
-        run: npm publish --registry=https://registry.npmjs.org/ --access public  # Adjust access level if needed
-        if: ${{ steps.release.outputs.release_created }}
-
-      - name: Publish to GitHub Packages
-        run: npm publish --registry=https://npm.pkg.github.com/
+      - name: Publish package
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}

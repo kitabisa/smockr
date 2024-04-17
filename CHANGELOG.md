@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.4](https://github.com/kitabisa/smockr/compare/v2.5.3...v2.5.4) (2024-04-17)
+
+
+### Bug Fixes
+
+* npm with org kitabisa ([8d814b9](https://github.com/kitabisa/smockr/commit/8d814b99c1b5923c1a7b2d34fa637793b18fa946))
+
 ## [2.5.3](https://github.com/kitabisa/smockr/compare/v2.5.2...v2.5.3) (2024-04-16)
 
 

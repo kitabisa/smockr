@@ -9,7 +9,7 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
+    if: github.event.pull_request.draft == false && github.actor != 'renovate[bot]'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,9 +32,9 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: semgrep/semgrep
-    if: (github.actor != 'dependabot[bot]')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - run: semgrep ci
+      - name: Run Semgrep
+        run: semgrep ci

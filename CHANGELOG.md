@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1](https://github.com/kitabisa/smockr/compare/v2.6.0...v2.6.1) (2024-04-18)
+
+
+### Bug Fixes
+
+* ci docker publish ([991eafc](https://github.com/kitabisa/smockr/commit/991eafc730b3f3339a97be98f10e0b52673c6998))
+
 ## [2.6.0](https://github.com/kitabisa/smockr/compare/v2.5.8...v2.6.0) (2024-04-18)
 
 

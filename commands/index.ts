@@ -23,6 +23,7 @@ export default async function main(
   const server = path.resolve(__dirname, '../../bin/server.js')
   execSync(`bun ${server}`, {
       env: {
+        ...process.env,
         PORT: port,
         SECRET_KEY: secret,
         ALLOWED_ORIGIN: allowOrigin,

@@ -14,10 +14,22 @@ CLI tools for serve supple mock server with random fake data using <a href="http
 
 ## Getting Started
 
-Setup smockr
+Setup smockr with npm
 
 ```
 $ npm install -g @kitabisa/smockr
+```
+
+Setup smockr with bun
+
+```
+$ bun add -g @kitabisa/smockr
+```
+
+Setup smockr with docker
+
+```
+$ docker pull kitabisa/smockr
 ```
 
 ## Quick Start

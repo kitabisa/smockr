@@ -21,15 +21,15 @@ export default async function main(
   allowHeaders?: string,
 ) {
   const server = path.resolve(__dirname, '../../bin/server.js')
-  execSync(
-    `
-    PORT=${port} \
-    SECRET_KEY=${secret} \
-    ALLOWED_ORIGIN=${allowOrigin} \
-    ALLOWED_METHODS=${allowMethods} \
-    ALLOWED_HEADERS=${allowHeaders} \
-    bun ${server}
-  `,
-    { stdio: 'inherit' },
+  execSync(`bun ${server}`, {
+      env: {
+        PORT: port,
+        SECRET_KEY: secret,
+        ALLOWED_ORIGIN: allowOrigin,
+        ALLOWED_METHODS: allowMethods,
+        ALLOWED_HEADERS: allowHeaders
+      },
+      stdio: 'inherit'
+    }
   )
 }

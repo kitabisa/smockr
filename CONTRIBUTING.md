@@ -140,7 +140,7 @@ content-length: 84
 {
   "code": 400,
   "message": "Requires property name",
-  "type": "RequestBodyException"
+  "type": "SchemaValidationException"
 }
 ```
 

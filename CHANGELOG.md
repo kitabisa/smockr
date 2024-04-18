@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.7](https://github.com/kitabisa/smockr/compare/v2.5.6...v2.5.7) (2024-04-18)
+
+
+### Bug Fixes
+
+* chore update dependency danger to v12 ([#67](https://github.com/kitabisa/smockr/issues/67)) ([86dcf1f](https://github.com/kitabisa/smockr/commit/86dcf1f8b50f9aa701c956c0d50f4f291c32c922))
+
 ## [2.5.6](https://github.com/kitabisa/smockr/compare/v2.5.5...v2.5.6) (2024-04-18)
 
 

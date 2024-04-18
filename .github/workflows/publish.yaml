@@ -52,14 +52,12 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Docker meta
-        id: docker_meta
+        id: meta
         uses: docker/metadata-action@v5
         with:
           images: kitabisa/smockr
           tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
+            type=ref,event=branch
             type=sha
         if: ${{ steps.release.outputs.release_created }}
 
@@ -77,8 +75,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: kitabisa/smockr:latest
-          labels: ${{ steps.docker_meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
         if: ${{ steps.release.outputs.release_created }}

@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.5.8](https://github.com/kitabisa/smockr/compare/v2.5.7...v2.5.8) (2024-04-18)
+
+
+### Bug Fixes
+
+* ignore all bot for running ci actions ([dbd5d60](https://github.com/kitabisa/smockr/commit/dbd5d60a4603f99c99fb115968a01cc124b832ab))
+* potential command injection ([#75](https://github.com/kitabisa/smockr/issues/75)) ([62830af](https://github.com/kitabisa/smockr/commit/62830af2d40c0f356ba41dd29c8017b812d82608))
+
 ## [2.5.7](https://github.com/kitabisa/smockr/compare/v2.5.6...v2.5.7) (2024-04-18)
 
 

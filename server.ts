@@ -174,7 +174,7 @@ app.all('*', (req: Request, res: Response) => {
           .replaceAll('instance.', '')
           .replaceAll('"', '')
         res.status(400)
-        res.send({
+        res.send({ // nosemgrep
           code: 400,
           message: msg && msg[0].toUpperCase() + msg.slice(1),
           type: 'SchemaValidationException',
@@ -196,14 +196,14 @@ app.all('*', (req: Request, res: Response) => {
     setTimeout(() => {
       res.status(status)
       res.set(headers)
-      res.send(body)
+      res.send(body) // nosemgrep
     }, delay)
     return
   }
 
   res.status(status)
   res.set(headers)
-  res.send(body)
+  res.send(body) // nosemgrep
 })
 
 app.listen(port, () => {

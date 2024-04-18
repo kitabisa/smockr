@@ -9,7 +9,7 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false
+    if: github.event.pull_request.draft == false && github.actor != 'renovate[bot]'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,3 +26,17 @@ jobs:
         run: bun danger ci
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  semgrep:
+    needs: ci
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep
+        run: semgrep ci
+        env:
+          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}

@@ -36,7 +36,7 @@ jobs:
       - name: Publish to npmjs
         run: npm publish --access public
         env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_AUTH_TOKEN: ${{secrets.NPMJS_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Set up Docker Buildx

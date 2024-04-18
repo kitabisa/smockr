@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.6](https://github.com/kitabisa/smockr/compare/v2.5.5...v2.5.6) (2024-04-18)
+
+
+### Bug Fixes
+
+* readme schema validation ([63e5f7b](https://github.com/kitabisa/smockr/commit/63e5f7b1ecde8c8a009d76b0df7bbebf0f0bdcc6))
+
 ## [2.5.5](https://github.com/kitabisa/smockr/compare/v2.5.4...v2.5.5) (2024-04-17)
 
 

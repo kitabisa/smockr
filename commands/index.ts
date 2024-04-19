@@ -22,7 +22,7 @@ export default async function main(
   allowHeaders?: string,
 ) {
   if (allowOrigin && allowOrigin !== '*') {
-    allowOrigin.split(',').map((origin), {
+    allowOrigin.split(',').map((origin) => {
       if (!isValidDomain(origin.trim(), { wildcard: true })) {
         console.error(`${origin.trim()} is not valid domain`)
         return
@@ -31,7 +31,7 @@ export default async function main(
   }
   if (allowMethods && allowMethods !== '*') {
     const methods = ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE']
-    allowMethods.split(',').map((method), {
+    allowMethods.split(',').map((method) => {
       if (!methods.includes(method.trim().toUpperCase())) {
         console.error(`${method.trim().toUpperCase()} is not valid http method`)
         return

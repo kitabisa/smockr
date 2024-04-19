@@ -59,7 +59,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: kitabisa/smockr
+          images: ${{ github.repository }}
           tags: |
             type=sha
             type=raw,value=${{ env.SEMVER }}

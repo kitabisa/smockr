@@ -57,8 +57,9 @@ jobs:
         with:
           images: kitabisa/smockr
           tags: |
-            type=raw,value=latest,enable={{is_default_branch}}
             type=sha
+            type=raw,value=$(jq -r '.version' package.json)
+            type=raw,value=latest
         if: ${{ steps.release.outputs.release_created }}
 
       - name: Cache Docker layers

@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.6.10](https://github.com/kitabisa/smockr/compare/v2.6.9...v2.6.10) (2024-04-19)
+
+
+### Bug Fixes
+
+* dockerhub description ([2b8ae91](https://github.com/kitabisa/smockr/commit/2b8ae910a3d3ae97f17bbb3f6515743d9f34d058))
+* publish docker with readme for description ([ae16237](https://github.com/kitabisa/smockr/commit/ae162377b9c797bbc3c2b579f2f8c17439b86a82))
+
 ## [2.6.9](https://github.com/kitabisa/smockr/compare/v2.6.8...v2.6.9) (2024-04-19)
 
 

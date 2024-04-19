@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.4](https://github.com/kitabisa/smockr/compare/v2.6.3...v2.6.4) (2024-04-19)
+
+
+### Bug Fixes
+
+* map array cors ([17af8e4](https://github.com/kitabisa/smockr/commit/17af8e4def95c7b1206b362a57397c7f62361ec6))
+
 ## [2.6.3](https://github.com/kitabisa/smockr/compare/v2.6.2...v2.6.3) (2024-04-19)
 
 

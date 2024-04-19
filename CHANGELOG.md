@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.8](https://github.com/kitabisa/smockr/compare/v2.6.7...v2.6.8) (2024-04-19)
+
+
+### Bug Fixes
+
+* metadata docker with github context ([7926758](https://github.com/kitabisa/smockr/commit/792675858cf3fb2847c0969bf9ea29468b932a94))
+
 ## [2.6.7](https://github.com/kitabisa/smockr/compare/v2.6.6...v2.6.7) (2024-04-19)
 
 

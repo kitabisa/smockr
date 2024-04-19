@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.5](https://github.com/kitabisa/smockr/compare/v2.6.4...v2.6.5) (2024-04-19)
+
+
+### Bug Fixes
+
+* docker publish for latest tag ([ee26749](https://github.com/kitabisa/smockr/commit/ee2674918085aea9ccaa35535cbb3bd50e8000f2))
+
 ## [2.6.4](https://github.com/kitabisa/smockr/compare/v2.6.3...v2.6.4) (2024-04-19)
 
 

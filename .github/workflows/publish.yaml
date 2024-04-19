@@ -51,6 +51,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
         if: ${{ steps.release.outputs.release_created }}
 
+      - name: Extract version from package.json
+        run: |
+          echo "SEMVER=$(jq -r '.version' package.json)" >> $GITHUB_ENV
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v5
@@ -58,7 +62,7 @@ jobs:
           images: kitabisa/smockr
           tags: |
             type=sha
-            type=raw,value=${{ jq -r '.version' package.json }}
+            type=raw,value=${{ env.SEMVER }}
             type=raw,value=latest
         if: ${{ steps.release.outputs.release_created }}
 

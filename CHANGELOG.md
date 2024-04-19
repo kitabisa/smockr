@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.9](https://github.com/kitabisa/smockr/compare/v2.6.8...v2.6.9) (2024-04-19)
+
+
+### Bug Fixes
+
+* update labels on dockerfile ([32de7db](https://github.com/kitabisa/smockr/commit/32de7db19d3f5b3a0ac2e0764d219ed91bc9a234))
+
 ## [2.6.8](https://github.com/kitabisa/smockr/compare/v2.6.7...v2.6.8) (2024-04-19)
 
 

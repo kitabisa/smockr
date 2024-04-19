@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.3](https://github.com/kitabisa/smockr/compare/v2.6.2...v2.6.3) (2024-04-19)
+
+
+### Bug Fixes
+
+* validate params cors ([#84](https://github.com/kitabisa/smockr/issues/84)) ([e434936](https://github.com/kitabisa/smockr/commit/e434936989d206480e76566b1a5203a1152d98ee))
+
 ## [2.6.2](https://github.com/kitabisa/smockr/compare/v2.6.1...v2.6.2) (2024-04-18)
 
 

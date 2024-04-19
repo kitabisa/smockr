@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.6.7](https://github.com/kitabisa/smockr/compare/v2.6.6...v2.6.7) (2024-04-19)
+
+
+### Bug Fixes
+
+* docker semver ([a2c3d21](https://github.com/kitabisa/smockr/commit/a2c3d21fbd653a20755e33fa42b96dc2d3b651e6))
+* docker semver ([0721a6a](https://github.com/kitabisa/smockr/commit/0721a6ab6c56d3b425291149926e489a188d5c6b))
+
 ## [2.6.6](https://github.com/kitabisa/smockr/compare/v2.6.5...v2.6.6) (2024-04-19)
 
 

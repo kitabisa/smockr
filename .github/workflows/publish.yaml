@@ -58,7 +58,7 @@ jobs:
           images: kitabisa/smockr
           tags: |
             type=sha
-            type=raw,value=$(jq -r '.version' package.json)
+            type=raw,value=${{ jq -r '.version' package.json }}
             type=raw,value=latest
         if: ${{ steps.release.outputs.release_created }}
 

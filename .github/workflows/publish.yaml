@@ -57,7 +57,7 @@ jobs:
         with:
           images: kitabisa/smockr
           tags: |
-            type=ref,event=branch
+            type=raw,value=latest,enable={{is_default_branch}}
             type=sha
         if: ${{ steps.release.outputs.release_created }}
 

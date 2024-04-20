@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.13](https://github.com/kitabisa/smockr/compare/v2.6.12...v2.6.13) (2024-04-20)
+
+
+### Bug Fixes
+
+* release please token ([5e78d9b](https://github.com/kitabisa/smockr/commit/5e78d9bddb0f0548219abb0fb8fedfbffeef89ae))
+
 ## [2.6.12](https://github.com/kitabisa/smockr/compare/v2.6.11...v2.6.12) (2024-04-20)
 
 

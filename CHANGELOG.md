@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.6.11](https://github.com/kitabisa/smockr/compare/v2.6.10...v2.6.11) (2024-04-20)
+
+
+### Bug Fixes
+
+* split ci for release please and publish ([#95](https://github.com/kitabisa/smockr/issues/95)) ([8504a6b](https://github.com/kitabisa/smockr/commit/8504a6bd169960e2df65d6a7e56cc877644e0368))
+* update docker description repository with default value ([6f2ed4b](https://github.com/kitabisa/smockr/commit/6f2ed4b57d79639ee956cb7f9914c9a7eda5de9d))
+
 ## [2.6.10](https://github.com/kitabisa/smockr/compare/v2.6.9...v2.6.10) (2024-04-19)
 
 

@@ -96,6 +96,10 @@ app.all('*', (req: Request, res: Response) => {
       headers = {
         'Content-Type': 'application/json',
         ...JSON.parse(headers),
+        'Access-Control-Allow-Origin': allowOrigin,
+        'Access-Control-Allow-Methods': allowMethods,
+        'Access-Control-Allow-Headers': allowHeaders,
+        'X-Powered-By': 'Smockr',
       }
     } catch (_error: any) {
       res.status(422)
@@ -108,7 +112,13 @@ app.all('*', (req: Request, res: Response) => {
       return
     }
   } else {
-    headers = { 'Content-Type': 'application/json' }
+    headers = {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': allowOrigin,
+      'Access-Control-Allow-Methods': allowMethods,
+      'Access-Control-Allow-Headers': allowHeaders,
+      'X-Powered-By': 'Smockr',
+    }
   }
 
   if (status) {

@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.12](https://github.com/kitabisa/smockr/compare/v2.6.11...v2.6.12) (2024-04-20)
+
+
+### Bug Fixes
+
+* static header for allow cors ([#96](https://github.com/kitabisa/smockr/issues/96)) ([df32bb6](https://github.com/kitabisa/smockr/commit/df32bb687a61eb2aaa3be219c58880470126d87e))
+
 ## [2.6.11](https://github.com/kitabisa/smockr/compare/v2.6.10...v2.6.11) (2024-04-20)
 
 

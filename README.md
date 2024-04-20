@@ -180,3 +180,8 @@ content-length: 24
   "health_check": "up"
 }
 ```
+
+## Contributing
+
+Want to contribute? Awesome! You can find information about contributing to
+this project in the [CONTRIBUTING.md](/CONTRIBUTING.md)

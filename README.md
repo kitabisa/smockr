@@ -89,7 +89,8 @@ $ smockr --version
 Running mock with default params
 
 ```
-$ docker run -p 8080:8080 --rm kitabisa/smockr
+$ docker run -p 8080:8080 --rm \
+kitabisa/smockr
 ```
 
 Running mock with custom params

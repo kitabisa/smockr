@@ -1,6 +1,24 @@
-# smockr
+<p align="center">
+  <a href="https://kitabisa.com" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-light.svg">
+      <img alt="smockr" src="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-light.svg" width="350" height="70" style="max-width: 100%;">
+    </picture>
+  </a>
+</p>
 
-CLI tools for serve supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
+<p align="center">
+  Supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
+</p>
+
+<!-- <p align="center">
+  <a href="https://github.com/kitabisa/cockpit/actions/workflows/deploy-stg-qurban.yaml"><img src="https://github.com/kitabisa/cockpit/actions/workflows/deploy-stg-qurban.yaml/badge.svg" alt="Deploy Stg Qurban" /></a>
+  <a href="https://github.com/kitabisa/cockpit/actions/workflows/deploy-stg-corin.yaml"><img src="https://github.com/kitabisa/cockpit/actions/workflows/deploy-stg-corin.yaml/badge.svg" alt="Deploy Stg Corin" /></a>
+  <!-- end of badges -->
+<!-- </p> -->
+
+<!-- ------ -->
 
 ## Features
 
@@ -34,6 +52,8 @@ $ docker pull kitabisa/smockr
 
 ## Quick Start
 
+### Run with node or bun
+
 Running mock with default params
 
 ```
@@ -62,6 +82,26 @@ See a installed version
 
 ```
 $ smockr --version
+```
+
+### Run with docker
+
+Running mock with default params
+
+```
+$ docker run -p 8080:8080 --rm kitabisa/smockr
+```
+
+Running mock with custom params
+
+```
+$ docker run -p 3000:3000 --rm -e \
+PORT=3000 \
+SECRET_KEY="mysecret" \
+ALLOWED_ORIGIN="*.kitabisa.com,*.kitajaga.id" \
+ALLOWED_METHODS="GET,POST,PATCH" \
+ALLOWED_HEADERS="Content-Type,Authorization" \
+kitabisa/smockr
 ```
 
 ## Usage

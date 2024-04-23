@@ -3,7 +3,7 @@ import isValidDomain from 'is-valid-domain'
 import path from 'path'
 
 /**
- * smockr is CLI tools for serve supple mock server
+ * smockr is supple mock server
  * with random fake data using Faker.js
  *
  * @usage {cliName} --port 8080
@@ -40,15 +40,14 @@ export default async function main(
   }
   const server = path.resolve(__dirname, '../../bin/server.js')
   execSync(`bun ${server}`, {
-      env: {
-        ...process.env,
-        PORT: port,
-        SECRET_KEY: secret,
-        ALLOWED_ORIGIN: allowOrigin,
-        ALLOWED_METHODS: allowMethods,
-        ALLOWED_HEADERS: allowHeaders
-      },
-      stdio: 'inherit'
-    }
-  )
+    env: {
+      ...process.env,
+      PORT: port?.toString(),
+      SECRET_KEY: secret,
+      ALLOWED_ORIGIN: allowOrigin,
+      ALLOWED_METHODS: allowMethods,
+      ALLOWED_HEADERS: allowHeaders,
+    },
+    stdio: 'inherit',
+  })
 }

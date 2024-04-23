@@ -39,4 +39,4 @@ jobs:
       - name: Run Semgrep
         run: semgrep ci
         env:
-          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+          SEMGREP_RULES: auto

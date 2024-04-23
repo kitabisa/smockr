@@ -225,4 +225,4 @@ content-length: 24
 ## Contributing
 
 Want to contribute? Awesome! You can find information about contributing to
-this project in the [CONTRIBUTING.md](/CONTRIBUTING.md)
+this project in the [CONTRIBUTING.md](https://github.com/kitabisa/smockr/blob/main/CONTRIBUTING.md)

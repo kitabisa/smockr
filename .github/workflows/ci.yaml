@@ -9,7 +9,7 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.draft == false && !endsWith(github.actor, '[bot]')
+    if: github.event.pull_request.draft == false && !endsWith(github.actor, '[bot]') && github.actor != 'kitabisaengineer'
     steps:
       - name: Checkout
         uses: actions/checkout@v4

@@ -24,8 +24,6 @@ jobs:
 
       - name: Run Danger JS
         run: bun danger ci
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
   semgrep:
     needs: ci

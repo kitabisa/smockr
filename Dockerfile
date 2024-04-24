@@ -1,4 +1,5 @@
 FROM oven/bun:1
+WORKDIR /usr/src/app
 
 # setup labels
 LABEL repository="https://github.com/kitabisa/smockr"
@@ -19,9 +20,9 @@ ENV ALLOWED_METHODS=$ALLOWED_METHODS
 ENV ALLOWED_HEADERS=$ALLOWED_HEADERS
 
 # copy binary
-COPY bin .
+COPY ./bin /usr/src/app/
 
 # run the app
 USER bun
 EXPOSE 8080/tcp
-ENTRYPOINT [ "bun", "run", "bin/server.js" ]
+ENTRYPOINT [ "bun", "run", "server.js" ]

@@ -96,11 +96,11 @@ kitabisa/smockr
 Running mock with custom params
 
 ```
-$ docker run -p 3000:8080 --rm -e \
-SECRET_KEY="mysecret" \
-ALLOWED_ORIGIN="*.kitabisa.com,*.kitajaga.id" \
-ALLOWED_METHODS="GET,POST,PATCH" \
-ALLOWED_HEADERS="Content-Type,Authorization" \
+$ docker run -p 3000:8080 --rm \
+-e SECRET_KEY="mysecret" \
+-e ALLOWED_ORIGIN="*.kitabisa.com,*.kitajaga.id" \
+-e ALLOWED_METHODS="GET,POST,PATCH" \
+-e ALLOWED_HEADERS="Content-Type,Authorization" \
 kitabisa/smockr
 ```
 

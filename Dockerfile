@@ -5,7 +5,6 @@ LABEL repository="https://github.com/kitabisa/smockr"
 LABEL maintainer="adeherysh"
 
 # setup arg
-ARG PORT
 ARG SECRET_KEY
 ARG ALLOWED_ORIGIN
 ARG ALLOWED_METHODS
@@ -13,7 +12,7 @@ ARG ALLOWED_HEADERS
 
 # setup env
 ENV NODE_ENV=production
-ENV PORT=$PORT
+ENV PORT=8080
 ENV SECRET_KEY=$SECRET_KEY
 ENV ALLOWED_ORIGIN=$ALLOWED_ORIGIN
 ENV ALLOWED_METHODS=$ALLOWED_METHODS
@@ -24,5 +23,5 @@ COPY bin .
 
 # run the app
 USER bun
-EXPOSE $PORT/tcp
+EXPOSE 8080/tcp
 ENTRYPOINT [ "bun", "run", "bin/server.js" ]

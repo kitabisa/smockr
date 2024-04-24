@@ -96,8 +96,7 @@ kitabisa/smockr
 Running mock with custom params
 
 ```
-$ docker run -p 3000:3000 --rm -e \
-PORT=3000 \
+$ docker run -p 3000:8080 --rm -e \
 SECRET_KEY="mysecret" \
 ALLOWED_ORIGIN="*.kitabisa.com,*.kitajaga.id" \
 ALLOWED_METHODS="GET,POST,PATCH" \

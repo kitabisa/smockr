@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.15](https://github.com/kitabisa/smockr/compare/v2.6.14...v2.6.15) (2024-04-24)
+
+
+### Bug Fixes
+
+* dockerfile ([8ce2829](https://github.com/kitabisa/smockr/commit/8ce28297a876280cd480a94d3f3dfddc1354adc5))
+
 ## [2.6.14](https://github.com/kitabisa/smockr/compare/v2.6.13...v2.6.14) (2024-04-24)
 
 

@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/kitabisa/smockr/actions/workflows/ci.yaml"><img src="https://img.shields.io/github/actions/workflow/status/kitabisa/smockr/ci.yml?branch=main" alt="Build Status"></a>
+  <a href="https://github.com/kitabisa/smockr/actions/workflows/ci.yaml"><img src="https://img.shields.io/github/actions/workflow/status/kitabisa/smockr/ci.yaml?branch=main" alt="Build Status"></a>
   <a href="https://www.npmjs.com/package/@kitabisa/smockr"><img src="https://img.shields.io/npm/dt/@kitabisa/smockr.svg" alt="NPM Downloads"></a>
   <a href="https://hub.docker.com/r/kitabisa/smockr"><img src="https://img.shields.io/docker/pulls/kitabisa/smockr" alt="Docker Pull"></a>
   <a href="https://github.com/kitabisa/smockr/releases"><img src="https://img.shields.io/github/v/release/kitabisa/smockr" alt="Latest Release"></a>

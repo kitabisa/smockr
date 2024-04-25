@@ -11,7 +11,7 @@ import path from 'path'
  * @param {number}   [port=8080] define port
  * @param {string}   [secret=""] define secret for client header X-Smockr-Secret
  * @param {string}   [allowOrigin="*"] define allow cors origin
- * @param {string}   [allowMethods="GET,HEAD,PUT,PATCH,POST,DELETE"] define allow cors methods
+ * @param {string}   [allowMethods="*"] define allow cors methods
  * @param {string}   [allowHeaders="*"] define allow cors headers
  */
 export default async function main(
@@ -30,7 +30,7 @@ export default async function main(
     })
   }
   if (allowMethods && allowMethods !== '*') {
-    const methods = ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE']
+    const methods = ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS']
     allowMethods.split(',').map((method) => {
       if (!methods.includes(method.trim().toUpperCase())) {
         console.error(`${method.trim().toUpperCase()} is not valid http method`)
@@ -41,12 +41,12 @@ export default async function main(
   const server = path.resolve(__dirname, '../../bin/server.js')
   execSync(`bun ${server}`, {
     env: {
-      ...process.env,
       PORT: port?.toString(),
       SECRET_KEY: secret,
       ALLOWED_ORIGIN: allowOrigin,
       ALLOWED_METHODS: allowMethods,
       ALLOWED_HEADERS: allowHeaders,
+      NODE_ENV: process.env.NODE_ENV,
     },
     stdio: 'inherit',
   })

@@ -9,12 +9,20 @@ const app = express()
 const dev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 8080
 const secret = process.env.SECRET_KEY || ''
-const allowOrigin = process.env.ALLOWED_ORIGIN || '*'
+const allowOrigin =
+  process.env.ALLOWED_ORIGIN && process.env.ALLOWED_ORIGIN !== '*'
+    ? process.env.ALLOWED_ORIGIN.replaceAll(' ', '').split(',').join(', ')
+    : '*'
 const allowMethods =
-  process.env.ALLOWED_METHODS || 'GET,HEAD,PUT,PATCH,POST,DELETE'
+  process.env.ALLOWED_METHODS && process.env.ALLOWED_METHODS !== '*'
+    ? process.env.ALLOWED_METHODS.replaceAll(' ', '')
+        .split(',')
+        .join(', ')
+        .toUpperCase()
+    : '*'
 const allowHeaders =
   process.env.ALLOWED_HEADERS && process.env.ALLOWED_HEADERS !== '*'
-    ? `${process.env.ALLOWED_HEADERS},X-Smockr-Secret`
+    ? `${process.env.ALLOWED_HEADERS?.replaceAll(' ', '').split(',').join(', ')}, X-Smockr-Secret`
     : '*'
 
 const corsOptions = cors({
@@ -45,7 +53,7 @@ app.get('/favicon.ico', (_req: Request, res: Response) => {
 })
 
 app.all('*', (req: Request, res: Response) => {
-  const clientSecret = req.headers['X-Smockr-Secret']
+  const clientSecret = req.headers['x-smockr-secret']
   const { mock }: any = req.query
   let body = mock?.response?.body
   let headers = mock?.response?.headers

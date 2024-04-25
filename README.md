@@ -1,11 +1,5 @@
 <p align="center">
-  <a href="https://kitabisa.com" target="_blank">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-light.svg">
-      <img src="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-light.svg" alt="smockr" width="350" height="70">
-    </picture>
-  </a>
+  <a href="https://kitabisa.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-light.svg"><img src="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-light.svg" alt="smockr" width="350" height="70"></picture></a>
 </p>
 
 <p align="center">

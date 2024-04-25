@@ -12,13 +12,15 @@
   Supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
 </p>
 
-<!-- <p align="center">
-  <a href="https://github.com/kitabisa/cockpit/actions/workflows/deploy-stg-qurban.yaml"><img src="https://github.com/kitabisa/cockpit/actions/workflows/deploy-stg-qurban.yaml/badge.svg" alt="Deploy Stg Qurban" /></a>
-  <a href="https://github.com/kitabisa/cockpit/actions/workflows/deploy-stg-corin.yaml"><img src="https://github.com/kitabisa/cockpit/actions/workflows/deploy-stg-corin.yaml/badge.svg" alt="Deploy Stg Corin" /></a>
-  <!-- end of badges -->
-<!-- </p> -->
+<p align="center">
+  <a href="https://github.com/kitabisa/smockr/actions/workflows/ci.yaml"><img src="https://img.shields.io/github/actions/workflow/status/kitabisa/smockr/ci.yml?branch=main" alt="Build Status"></a>
+  <a href="https://www.npmjs.com/package/@kitabisa/smockr"><img src="https://img.shields.io/npm/dt/@kitabisa/smockr.svg" alt="NPM Downloads"></a>
+  <a href="https://hub.docker.com/r/kitabisa/smockr"><img src="https://img.shields.io/docker/pulls/kitabisa/smockr" alt="Docker Pull"></a>
+  <a href="https://github.com/kitabisa/smockr/releases"><img src="https://img.shields.io/github/v/release/kitabisa/smockr" alt="Latest Release"></a>
+  <a href="https://github.com/kitabisa/smockr/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@kitabisa/smockr.svg" alt="License"></a>
+</p>
 
-<!-- ------ -->
+------
 
 ## Features
 
@@ -66,9 +68,9 @@ Running mock with custom params
 $ smockr \
 --port 3000 \
 --secret "mysecret" \
---allowOrigin "*.kitabisa.com,*.kitajaga.id" \
---allowMethods "GET,POST,PATCH" \
---allowHeaders "Content-Type,Authorization"
+--allowOrigin "*.kitabisa.com, *.kitajaga.id" \
+--allowMethods "GET, POST, PATCH" \
+--allowHeaders "Content-Type, Authorization"
 ```
 When you define `secret` as a parameter and is not empty string, the client request must be include `X-Smockr-Secret` header with the same value
 
@@ -98,9 +100,9 @@ Running mock with custom params
 ```
 $ docker run -p 3000:8080 --rm \
 -e SECRET_KEY="mysecret" \
--e ALLOWED_ORIGIN="*.kitabisa.com,*.kitajaga.id" \
--e ALLOWED_METHODS="GET,POST,PATCH" \
--e ALLOWED_HEADERS="Content-Type,Authorization" \
+-e ALLOWED_ORIGIN="*.kitabisa.com, *.kitajaga.id" \
+-e ALLOWED_METHODS="GET, POST, PATCH" \
+-e ALLOWED_HEADERS="Content-Type, Authorization" \
 kitabisa/smockr
 ```
 

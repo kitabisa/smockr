@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.17](https://github.com/kitabisa/smockr/compare/v2.6.16...v2.6.17) (2024-04-25)
+
+
+### Bug Fixes
+
+* request header secret ([#104](https://github.com/kitabisa/smockr/issues/104)) ([e2e9e4e](https://github.com/kitabisa/smockr/commit/e2e9e4e82687d0ceb745026049ef3479899cb0fd))
+
 ## [2.6.16](https://github.com/kitabisa/smockr/compare/v2.6.15...v2.6.16) (2024-04-24)
 
 

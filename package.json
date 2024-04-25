@@ -1,6 +1,6 @@
 {
   "name": "@kitabisa/smockr",
-  "version": "2.6.20",
+  "version": "2.6.21",
   "description": "Supple mock server with random fake data using Faker.js",
   "license": "MIT",
   "author": "Kitabisa Engineer <engineer@kitabisa.com>",

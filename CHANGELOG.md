@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.21](https://github.com/kitabisa/smockr/compare/v2.6.20...v2.6.21) (2024-04-25)
+
+
+### Bug Fixes
+
+* single allow origin ([a89ff5d](https://github.com/kitabisa/smockr/commit/a89ff5d7e56a30cd4e4e89444bf3434bf244d7ce))
+
 ## [2.6.20](https://github.com/kitabisa/smockr/compare/v2.6.19...v2.6.20) (2024-04-25)
 
 

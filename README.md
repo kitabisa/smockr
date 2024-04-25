@@ -64,7 +64,7 @@ Running mock with custom params
 $ smockr \
 --port 3000 \
 --secret "mysecret" \
---allowOrigin "*.kitabisa.com, *.kitajaga.id" \
+--allowOrigin "https://kitabisa.com" \
 --allowMethods "GET, POST, PATCH" \
 --allowHeaders "Content-Type, Authorization"
 ```
@@ -96,7 +96,7 @@ Running mock with custom params
 ```
 $ docker run -p 3000:8080 --rm \
 -e SECRET_KEY="mysecret" \
--e ALLOWED_ORIGIN="*.kitabisa.com, *.kitajaga.id" \
+-e ALLOWED_ORIGIN="https://kitabisa.com" \
 -e ALLOWED_METHODS="GET, POST, PATCH" \
 -e ALLOWED_HEADERS="Content-Type, Authorization" \
 kitabisa/smockr

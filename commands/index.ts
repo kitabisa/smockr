@@ -1,5 +1,4 @@
 import { execSync } from 'child_process'
-import isValidDomain from 'is-valid-domain'
 import path from 'path'
 
 /**
@@ -21,32 +20,15 @@ export default async function main(
   allowMethods?: string,
   allowHeaders?: string,
 ) {
-  if (allowOrigin && allowOrigin !== '*') {
-    allowOrigin.split(',').map((origin) => {
-      if (!isValidDomain(origin.trim(), { wildcard: true })) {
-        console.error(`${origin.trim()} is not valid domain`)
-        return
-      }
-    })
-  }
-  if (allowMethods && allowMethods !== '*') {
-    const methods = ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS']
-    allowMethods.split(',').map((method) => {
-      if (!methods.includes(method.trim().toUpperCase())) {
-        console.error(`${method.trim().toUpperCase()} is not valid http method`)
-        return
-      }
-    })
-  }
   const server = path.resolve(__dirname, '../../bin/server.js')
   execSync(`bun ${server}`, {
     env: {
+      ...process.env,
       PORT: port?.toString(),
       SECRET_KEY: secret,
       ALLOWED_ORIGIN: allowOrigin,
       ALLOWED_METHODS: allowMethods,
       ALLOWED_HEADERS: allowHeaders,
-      NODE_ENV: process.env.NODE_ENV,
     },
     stdio: 'inherit',
   })

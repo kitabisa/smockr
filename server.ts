@@ -9,10 +9,7 @@ const app = express()
 const dev = process.env.NODE_ENV !== 'production'
 const port = process.env.PORT || 8080
 const secret = process.env.SECRET_KEY || ''
-const allowOrigin =
-  process.env.ALLOWED_ORIGIN && process.env.ALLOWED_ORIGIN !== '*'
-    ? process.env.ALLOWED_ORIGIN.replaceAll(' ', '').split(',').join(', ')
-    : '*'
+const allowOrigin = process.env.ALLOWED_ORIGIN || '*'
 const allowMethods =
   process.env.ALLOWED_METHODS && process.env.ALLOWED_METHODS !== '*'
     ? process.env.ALLOWED_METHODS.replaceAll(' ', '')
@@ -192,7 +189,8 @@ app.all('*', (req: Request, res: Response) => {
           .replaceAll('instance.', '')
           .replaceAll('"', '')
         res.status(400)
-        res.send({ // nosemgrep
+        res.send({
+          // nosemgrep
           code: 400,
           message: msg && msg[0].toUpperCase() + msg.slice(1),
           type: 'SchemaValidationException',

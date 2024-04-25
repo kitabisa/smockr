@@ -3,7 +3,7 @@
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-light.svg">
-      <img alt="smockr" src="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-light.svg" width="350" height="70" style="max-width: 100%;">
+      <img src="https://raw.githubusercontent.com/kitabisa/smockr/main/.github/assets/logo-light.svg" alt="smockr" width="350" height="70">
     </picture>
   </a>
 </p>

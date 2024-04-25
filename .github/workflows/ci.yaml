@@ -26,15 +26,9 @@ jobs:
       - name: Build package
         run: bun run build
 
-  danger:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.actor != 'kitabisaengineer' && !endsWith(github.actor, '[bot]')
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Run Danger JS
-        uses: danger/danger-js@12.1.0
+        if: github.event_name == 'pull_request' && github.actor != 'kitabisaengineer' && !endsWith(github.actor, '[bot]')
+        run: bun danger ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

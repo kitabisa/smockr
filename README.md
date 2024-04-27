@@ -219,6 +219,19 @@ content-length: 24
 }
 ```
 
+## Ceveat
+
+Some cases in production deployment mode, there may be problems related to `Request uri too long`. If you are using kubernetes ingress, try to apply this config:
+```
+annotations:
+  nginx.ingress.kubernetes.io/client-header-buffer-size: 100k
+  nginx.ingress.kubernetes.io/large-client-header-buffers: 4 100k
+  nginx.ingress.kubernetes.io/server-snippet: |
+    client_header_buffer_size 100k;
+    large_client_header_buffers 4 100k;
+```
+
+
 ## Contributing
 
 Want to contribute? Awesome! You can find information about contributing to

@@ -27,7 +27,7 @@ jobs:
         run: bun run build
 
       - name: Run Danger JS
-        if: github.event_name == 'pull_request' && github.actor != 'kitabisaengineer' && !endsWith(github.actor, '[bot]')
+        if: github.event_name == 'pull_request'
         run: bun danger ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

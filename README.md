@@ -21,9 +21,8 @@
 ## Features
 
  * Using [Bun](https://github.com/oven-sh/bun)
- * Using [Express.js](https://github.com/expressjs/express)
  * Written in [Typescript](https://github.com/microsoft/TypeScript)
- * Random fake data using [Faker.js](https://github.com/faker-js/faker)
+ * Optional get random fake data using [Faker.js](https://github.com/faker-js/faker)
  * Request body validation using [JSON Schema](https://json-schema.org/learn/miscellaneous-examples)
  * Flexible on-demand response (can modify body, status, headers, and delayed response)
  * No data storage needed
@@ -121,7 +120,7 @@ content-length: 18
 }
 ```
 
-Specify a search body param with random fake data using faker.js.
+Specify a search body param with random fake data using [faker.js api helpers fake](https://fakerjs.dev/api/helpers#fake).
 
 ```http
 GET http://localhost:8080/?mock[response][body]={"id":{{number.int({"min":100000,"max":900000})}},"name":"{{person.fullName}}","avatar":"{{image.avatar}}"}
@@ -219,7 +218,7 @@ content-length: 24
 }
 ```
 
-## Ceveat
+## Caveats
 
 Some cases in production deployment mode, there may be problems related to `Request uri too long`. If you are using kubernetes ingress, try to apply this configuration:
 ```yml

@@ -220,7 +220,7 @@ content-length: 24
 
 ## Caveats
 
-Some cases in production deployment mode, there may be problems related to `Request uri too long`. If you are using kubernetes ingress, try to apply this configuration:
+Some cases in production server, there may be problems related to `Request-URI too large`. If you are using kubernetes ingress, try to apply this configuration:
 ```yml
 annotations:
   nginx.ingress.kubernetes.io/client-header-buffer-size: 100k

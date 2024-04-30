@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.7.0](https://github.com/kitabisa/smockr/compare/v2.6.21...v2.7.0) (2024-04-30)
+
+
+### Features
+
+* add dockerize for node ([#111](https://github.com/kitabisa/smockr/issues/111)) ([d384781](https://github.com/kitabisa/smockr/commit/d384781a42fbc7e98ac69a5950dd7e14cd266ba9))
+
+
+### Bug Fixes
+
+* docs for ceveat request uri too long ([22616e5](https://github.com/kitabisa/smockr/commit/22616e5e3529cec5ca504c733e039ae8d5a09f0d))
+* update README.md ([eb5f7da](https://github.com/kitabisa/smockr/commit/eb5f7daa43bc3d89e6e3f88a7b0ac8c424ffced1))
+
 ## [2.6.21](https://github.com/kitabisa/smockr/compare/v2.6.20...v2.6.21) (2024-04-25)
 
 

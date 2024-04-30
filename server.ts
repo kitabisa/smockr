@@ -224,6 +224,7 @@ app.all('*', (req: Request, res: Response) => {
 
 app.listen(port, () => {
   console.log(`   \x1b[33m▲ ${pkg.name} ${pkg.version}\x1b[0m`)
+  console.log(`   - Runtime:      ${process.versions.bun ? 'bun' : 'node'}`)
   console.log(`   - Network:      http://localhost:${port}`)
   console.log(`   - Local:        http://0.0.0.0:${port}`)
   console.log(`   - Params:       --port ${port}`)

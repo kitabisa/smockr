@@ -8,6 +8,8 @@
     "prepare": "husky || true",
     "precompile": "rimraf ./bin ./dist",
     "compile": "bun build ./server.ts --outdir ./bin --target bun --format esm --minify",
+    "precompile:node": "rimraf ./bin ./dist",
+    "compile:node": "bun build ./server.ts --outdir ./bin --target node --entry-naming [dir]/[name].mjs --format esm --minify",
     "predev": "bun run compile",
     "dev": "cd commands && opaline dev",
     "prebuild": "NODE_ENV=production bun run compile",

@@ -57,7 +57,7 @@ jobs:
             ${{ runner.os }}-buildx-
 
       - name: Publish to DockerHub
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
@@ -128,7 +128,7 @@ jobs:
             ${{ runner.os }}-buildx-node-
 
       - name: Publish to DockerHub
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: Dockerfile.node

@@ -22,9 +22,9 @@
 
  * Using [Bun](https://github.com/oven-sh/bun)
  * Written in [Typescript](https://github.com/microsoft/TypeScript)
+ * Flexible on-demand response (can modify body, status, headers, and delayed response)
  * Optional get random fake data using [Faker.js](https://github.com/faker-js/faker)
  * Request body validation using [JSON Schema](https://json-schema.org/learn/miscellaneous-examples)
- * Flexible on-demand response (can modify body, status, headers, and delayed response)
  * No data storage needed
 
 ## Getting Started

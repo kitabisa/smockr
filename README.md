@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  Supple mock server with random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
+  Supple mock server with flexible on-demand response and optional get random fake data using <a href="https://github.com/faker-js/faker">Faker.js</a>
 </p>
 
 <p align="center">

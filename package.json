@@ -51,7 +51,7 @@
     "back-end"
   ],
   "dependencies": {
-    "@faker-js/faker": "^8.4.1",
+    "@faker-js/faker": "^9.0.0",
     "@opaline/core": "^0.5.5",
     "cors": "^2.8.5",
     "express": "^4.19.2",

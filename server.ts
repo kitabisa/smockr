@@ -2,6 +2,7 @@ import { faker } from '@faker-js/faker'
 import cors from 'cors'
 import express, { Request, Response } from 'express'
 import { validate } from 'jsonschema'
+import { decompressFromEncodedURIComponent } from 'lz-string'
 import morgan from 'morgan'
 import pkg from './package.json'
 
@@ -57,6 +58,7 @@ app.all('*', (req: Request, res: Response) => {
   let status = mock?.response?.status
   let delay = mock?.response?.delay
   let bodySchema = mock?.request?.body?.schema
+  const isCompressed = mock?.compressed === 'true'
 
   if (secret) {
     if (clientSecret !== secret) {
@@ -82,7 +84,19 @@ app.all('*', (req: Request, res: Response) => {
     return
   }
 
+  // Decompress JSON params if mock[compressed]=true is present (default: false)
+  const decompressIfNeeded = (value: string): string => {
+    if (!isCompressed || !value) return value
+    try {
+      const decompressed = decompressFromEncodedURIComponent(value)
+      return decompressed || value
+    } catch {
+      return value
+    }
+  }
+
   if (body) {
+    body = decompressIfNeeded(body)
     try {
       body = faker.helpers.fake(body)
     } catch (error: any) {
@@ -97,13 +111,23 @@ app.all('*', (req: Request, res: Response) => {
   }
 
   if (headers) {
+    headers = decompressIfNeeded(headers)
+  }
+
+  if (bodySchema) {
+    bodySchema = decompressIfNeeded(bodySchema)
+  }
+
+  if (headers) {
     try {
+      const customHeaders = JSON.parse(headers)
       headers = {
         'Content-Type': 'application/json',
-        ...JSON.parse(headers),
+        ...customHeaders,
         'Access-Control-Allow-Origin': allowOrigin,
         'Access-Control-Allow-Methods': allowMethods,
         'Access-Control-Allow-Headers': allowHeaders,
+        'Access-Control-Expose-Headers': Object.keys(customHeaders).join(', '),
         'X-Powered-By': 'Smockr',
       }
     } catch (_error: any) {

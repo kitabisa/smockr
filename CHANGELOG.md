@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.8.1](https://github.com/kitabisa/smockr/compare/v2.8.0...v2.8.1) (2026-03-06)
+
+
+### Bug Fixes
+
+* publish token ([#129](https://github.com/kitabisa/smockr/issues/129)) ([62cda50](https://github.com/kitabisa/smockr/commit/62cda50545e13cf8cd42e0b383202f8d943277bb))
+* release please ([#130](https://github.com/kitabisa/smockr/issues/130)) ([3a4c024](https://github.com/kitabisa/smockr/commit/3a4c02429e3f23dbeac84278b02600760050bff7))
+
 ## [2.7.0](https://github.com/kitabisa/smockr/compare/v2.6.21...v2.7.0) (2024-04-30)
 
 

@@ -74,7 +74,7 @@
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@typescript-eslint/parser": "^7.6.0",
-    "danger": "^12.0.0",
+    "danger": "^13.0.8",
     "danger-plugin-conventional-commitlint": "^3.0.0",
     "eslint": "^8",
     "eslint-config-prettier": "^9.1.0",
